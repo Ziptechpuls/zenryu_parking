@@ -37,17 +37,13 @@ function Header({ current }) {
       <header className="nav">
         <div className="nav__inner">
           <a className="brand" href="index.html">
-            <div className="brand__mark">全</div>
-            <div>
-              <div className="brand__name">ゼンリュウ</div>
-              <div className="brand__sub">OKINAWA MOBILITY</div>
-            </div>
+            <img className="brand__logo" src="assets/zenryu-logo.png" alt="ゼンリュウレンタカー" />
           </a>
           <nav className="nav__links">
             {link('home', 'index.html', 'ホーム')}
-            {link('parking', 'parking.html', 'カーケア・パーキング')}
+            {link('parking', 'parking.html', 'パーキング')}
             {link('detailing', 'detailing.html', 'ディテイリング')}
-            <a href="index.html#rental">レンタカー</a>
+            <a href="index.html#access">アクセス</a>
             <a href="index.html#company">会社概要</a>
           </nav>
           <div className="nav__cta">
@@ -68,10 +64,8 @@ function Header({ current }) {
       <div className={`nav__drawer__overlay ${menuOpen ? 'is-open' : ''}`} onClick={close}></div>
       <aside className={`nav__drawer ${menuOpen ? 'is-open' : ''}`}>
         <a href="index.html" onClick={close}>ホーム</a>
-        <a href="parking.html" onClick={close}>カーケア・パーキング</a>
+        <a href="parking.html" onClick={close}>パーキング</a>
         <a href="detailing.html" onClick={close}>ディテイリング</a>
-        <a href="index.html#rental" onClick={close}>レンタカー</a>
-        <a href="index.html#used" onClick={close}>認定中古車</a>
         <a href="index.html#company" onClick={close}>会社概要</a>
         <a href="index.html#access" onClick={close}>アクセス</a>
         <div className="nav__drawer__cta">
@@ -91,7 +85,7 @@ function Header({ current }) {
 
 function TrustStrip() {
   const items = [
-    { glyph: '三', title: '3事業展開',   label: 'カーケア・レンタカー・中古車' },
+    { glyph: '二', title: '2事業展開',   label: 'パーキング＋ディテイリング' },
     { glyph: '松', title: '松竹梅プラン', label: '仕上がりで選べる3プラン' },
     { glyph: '磨', title: '自社施工',     label: 'コーティングを自社で仕上げ' },
     { glyph: '送', title: '空港送迎',     label: '那覇空港への送迎に対応' },
@@ -155,10 +149,8 @@ function Footer() {
           <div className="footer__col">
             <h4>Service</h4>
             <ul>
-              <li><a href="parking.html">カーケア・パーキング</a></li>
+              <li><a href="parking.html">空港パーキング</a></li>
               <li><a href="detailing.html">カーディテイリング</a></li>
-              <li><a href="index.html#rental">レンタカー</a></li>
-              <li><a href="index.html#used">認定中古車</a></li>
             </ul>
           </div>
           <div className="footer__col">
@@ -176,7 +168,6 @@ function Footer() {
               <li>{c.phone}</li>
               <li>営業 {c.hours}</li>
               <li><a href={c.instagram}>Instagram</a></li>
-              <li><a href={c.rentalUrl}>レンタカー予約</a></li>
             </ul>
           </div>
         </div>
