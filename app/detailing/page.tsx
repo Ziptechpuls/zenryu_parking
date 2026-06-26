@@ -1,15 +1,25 @@
 import type { Metadata } from 'next';
 import DetailingPage from '@/components/DetailingPage';
+import { DETAILING_FAQS } from '@/lib/data';
 
 export const metadata: Metadata = {
-  title: '沖縄 カーディテイリング | 那覇 コーティング | ゼンリュウ',
+  title: '豊見城市 カーディテイリング｜車磨き・車内清掃・コーティング | ゼンリュウ',
   description:
-    '沖縄でカーディテイリングをお探しの方へ。ゼンリュウは手洗い洗車¥5,000からガラスコーティングまで自社施工。那覇空港のパーキングと併せてもディテイリング単独でもご依頼可能。',
-  keywords: ['沖縄 カーディテイリング', '那覇 ディテイリング', '沖縄 ガラスコーティング', '那覇 洗車', '沖縄 鉄粉除去'],
+    '豊見城市のカーディテイリング専門店ゼンリュウ。手洗い洗車¥5,000から車磨き(ポリッシング)・ガラスコーティング・車内清掃まで自社施工。豊見城市・那覇市・沖縄本島南部で愛車を磨きたい方へ。輸入車・EV車にも対応。',
+  keywords: [
+    '豊見城市 カーディテイリング',
+    '豊見城 車磨き',
+    '豊見城市 車内清掃',
+    '豊見城 洗車',
+    '豊見城 ガラスコーティング',
+    '沖縄 カーディテイリング',
+    '那覇 車磨き',
+    '沖縄 車内清掃',
+  ],
   alternates: { canonical: '/detailing' },
   openGraph: {
-    title: '沖縄 カーディテイリング | 那覇 コーティング | ゼンリュウ',
-    description: '自社施工のディテイリング。手洗い洗車からガラスコーティングまで。',
+    title: '豊見城市 カーディテイリング｜車磨き・車内清掃・コーティング | ゼンリュウ',
+    description: '豊見城市のカーディテイリング。手洗い洗車・車磨き・ガラスコーティング・車内清掃まで自社施工。',
     type: 'website',
     locale: 'ja_JP',
   },
@@ -18,10 +28,16 @@ export const metadata: Metadata = {
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Service',
-  serviceType: 'カーディテイリング',
+  name: '豊見城市 カーディテイリング',
+  serviceType: 'カーディテイリング・車磨き・車内清掃・ガラスコーティング',
+  areaServed: [
+    { '@type': 'City', name: '豊見城市' },
+    { '@type': 'City', name: '那覇市' },
+    { '@type': 'AdministrativeArea', name: '沖縄県' },
+  ],
   provider: {
     '@type': 'LocalBusiness',
-    name: 'ゼンリュウ',
+    name: 'ゼンリュウレンタカー',
     telephone: '+81-98-995-9805',
     address: {
       '@type': 'PostalAddress',
@@ -33,16 +49,27 @@ const jsonLd = {
     },
   },
   offers: [
-    { '@type': 'Offer', name: 'クイック', price: '5000', priceCurrency: 'JPY' },
-    { '@type': 'Offer', name: 'スタンダード', price: '15000', priceCurrency: 'JPY' },
-    { '@type': 'Offer', name: 'プレミアム', price: '50000', priceCurrency: 'JPY' },
+    { '@type': 'Offer', name: 'クイック (洗車)', price: '5000', priceCurrency: 'JPY' },
+    { '@type': 'Offer', name: 'スタンダード (車磨き・撥水)', price: '15000', priceCurrency: 'JPY' },
+    { '@type': 'Offer', name: 'プレミアム (本格研磨・ガラスコーティング)', price: '50000', priceCurrency: 'JPY' },
   ],
+};
+
+const faqLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: DETAILING_FAQS.map((f) => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a },
+  })),
 };
 
 export default function Page() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />
       <DetailingPage />
     </>
   );

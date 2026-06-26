@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { ZENRYU_DATA } from '@/lib/data';
+import { ZENRYU_DATA, DETAILING_FAQS } from '@/lib/data';
 import { UtilBar } from './UtilBar';
 import { Header } from './Header';
 import { CtaBand } from './CtaBand';
@@ -13,14 +13,7 @@ export default function DetailingPage() {
   const data = ZENRYU_DATA;
   const [openFaq, setOpenFaq] = useState(0);
 
-  const detailFaqs = [
-    { q: 'ディテイリングだけの依頼は可能ですか?', a: 'はい、パーキングをご利用にならない場合でも、コース単独でのご依頼を承ります。料金は松竹梅と同じ¥5,000 / ¥15,000 / ¥50,000〜でございます。お電話・Instagramにてご相談ください。' },
-    { q: 'コーティングはどのくらい持続しますか?', a: '耐久性は使用環境・保管状況により異なります。施工後の定期メンテナンスや追加施工も承りますので、お車の状態に合わせてご提案いたします。' },
-    { q: '輸入車・EV車でも施工可能ですか?', a: '欧州車・米国車・国産車・EV車に対応いたします。塗装の柔らかい欧州車も、車種特性を踏まえて丁寧に仕上げます。事前にお気軽にご相談ください。' },
-    { q: '預ける前に車内を片付ける必要は?', a: 'クリーニング対象は内装パネル・シート・カーペット類です。お預かりした個人の荷物・書類はそのままケースに整理して保管いたしますが、貴重品はお持ち帰りいただくことを推奨しております。' },
-    { q: 'パーキング付きとの違いは?', a: 'ディテイリング単独依頼でも、松竹梅のカーケアコースでも、施工内容自体は同じです。ご旅行・ご出張をご予定の際は、その期間を活用してカーケアコースをご選択いただくのが効率的です (パーキング ¥1,000/日)。' },
-    { q: '料金以外に追加費用はかかりますか?', a: '原則として、追加費用は発生いたしません。ただし、シミ・タバコ臭・ペット臭などが特に酷い場合は、事前にご相談のうえで追加料金をご案内する場合がございます。' },
-  ];
+  const detailFaqs = DETAILING_FAQS;
 
   const works = [
     { car: 'Lexus LX600', tier: 'PREMIUM', months: '所有3年 / 屋外駐車' },
@@ -47,12 +40,12 @@ export default function DetailingPage() {
             <div>
               <div className="eyebrow">CAR DETAILING · カーディテイリング</div>
               <h1 className="page-hero__title page-hero__title--nowrap">
-                沖縄の塩害・紫外線から、<br/>
-                <em>愛車を守る。</em>磨き上げる。<br/>
-                ディテイリング ¥5,000〜
+                豊見城の<em>カーディテイリング</em><br/>
+                洗車・車磨き・車内清掃。<br/>
+                ¥5,000〜
               </h1>
               <p className="page-hero__lede">
-                豊見城でカーディテイリングをお探しの方へ。手洗い洗車から本格的なガラスコーティング、さらに車内清掃まで、ご用途に合わせた3つのコース (松竹梅) でご提供いたします。沖縄特有の塩害・紫外線にさらされた一台一台と向き合い、外も内も本来の美しさを引き出します。
+                豊見城市でカーディテイリング・車磨きをお探しの方へ。手洗い洗車から本格的な車磨き・ガラスコーティング、さらに車内清掃まで、ご用途に合わせた3つのコース (松竹梅) でご提供いたします。沖縄特有の塩害・紫外線にさらされた一台一台と向き合い、外も内も本来の美しさを引き出します。
               </p>
             </div>
             <dl className="page-hero__meta">
@@ -70,10 +63,10 @@ export default function DetailingPage() {
       <section className="dt-menu" id="menu">
         <div className="section">
           <div className="eyebrow">MENU · ディテイリングメニュー</div>
-          <h2 className="section-title">三つのコース。<br/>ご用途で<em>お選びください。</em></h2>
+          <h2 className="section-title">豊見城のカーディテイリング、<br/>三つの<em>コース。</em></h2>
           <p className="section-lede">
-            「日常のメンテナンス」「徹底クリーニング」「新車の輝きを取り戻す」—
-            お車の状態とご要望に合わせて、最適なコースをお選びいただけます。
+            「日常のメンテナンス洗車」「車磨き・徹底車内清掃」「新車の輝きを取り戻す本格コーティング」—
+            お車の状態とご要望に合わせて、最適なカーディテイリングコースをお選びいただけます。
           </p>
           <div className="dt-menu__grid">
             {data.detailingMenu.map((m) => (

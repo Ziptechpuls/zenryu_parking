@@ -1,15 +1,25 @@
 import type { Metadata } from 'next';
 import ParkingPage from '@/components/ParkingPage';
+import { ZENRYU_DATA } from '@/lib/data';
 
 export const metadata: Metadata = {
-  title: '那覇空港 カーケア・パーキング | 松竹梅プラン | ゼンリュウ',
+  title: '那覇空港パーキング ¥1,000/日｜送迎・カーケア付き駐車場 | ゼンリュウ',
   description:
-    '那覇空港で愛車をお預かりし、ご旅行・ご出張のあいだにカーケアを施工。パーキング¥1,000/日、カーケアコース ¥5,000・¥15,000・¥50,000〜 (松竹梅)。送迎付き。',
-  keywords: ['那覇空港 駐車', '那覇空港 カーケア', '沖縄 洗車', '沖縄 コーティング', '那覇空港 パーキング'],
+    '那覇空港パーキングならゼンリュウ。1日¥1,000で空港すぐそばに愛車をお預かり、空港まで送迎付き。ご旅行・ご出張中の駐車場をお探しの方へ。お預かり中に手洗い洗車・コーティングを施工するカーケアコース (松竹梅 ¥5,000〜) もご利用いただけます。',
+  keywords: [
+    '那覇空港パーキング',
+    '那覇空港 駐車場',
+    '那覇空港 駐車場 預ける',
+    '那覇空港 駐車場 安い',
+    '那覇空港 駐車場 送迎',
+    '沖縄 空港 駐車場',
+    '那覇空港 パーキング',
+    '空港パーキング 沖縄',
+  ],
   alternates: { canonical: '/parking' },
   openGraph: {
-    title: '那覇空港 カーケア・パーキング | 松竹梅プラン | ゼンリュウ',
-    description: '那覇空港でお車をお預かりし、滞在中にカーケア・コーティングを施工。',
+    title: '那覇空港パーキング ¥1,000/日｜送迎・カーケア付き | ゼンリュウ',
+    description: '那覇空港すぐそば、1日¥1,000・送迎付きの空港パーキング。お預かり中にカーケア・コーティングも施工。',
     type: 'website',
     locale: 'ja_JP',
   },
@@ -18,10 +28,12 @@ export const metadata: Metadata = {
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Service',
-  serviceType: 'カーケア・空港パーキング',
+  name: '那覇空港パーキング',
+  serviceType: '空港パーキング・カーケア',
+  areaServed: { '@type': 'Airport', name: '那覇空港', iataCode: 'OKA' },
   provider: {
     '@type': 'LocalBusiness',
-    name: 'ゼンリュウ',
+    name: 'ゼンリュウレンタカー',
     telephone: '+81-98-995-9805',
     address: {
       '@type': 'PostalAddress',
@@ -40,10 +52,21 @@ const jsonLd = {
   ],
 };
 
+const faqLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: ZENRYU_DATA.faqs.map((f) => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a },
+  })),
+};
+
 export default function Page() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />
       <ParkingPage />
     </>
   );

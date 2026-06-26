@@ -55,8 +55,8 @@ export default function HomePage() {
               ご旅行・ご出張で車を停めているそのあいだに、職人が洗車・磨き・コーティングを施工します。
             </p>
             <div className="hero__actions">
-              <Link className="btn btn--gold btn--lg" href="/parking">パーキングを見る</Link>
-              <Link className="btn btn--ghost btn--lg" href="/detailing">ディテイリングを見る</Link>
+              <Link className="btn btn--gold btn--lg" href="/parking">那覇空港パーキングを見る</Link>
+              <Link className="btn btn--ghost btn--lg" href="/detailing">カーディテイリングを見る</Link>
             </div>
             <div className="hero__stats">
               <div className="hero__stat">
@@ -116,7 +116,7 @@ export default function HomePage() {
               那覇空港のすぐそばで愛車をお預かり。ご旅行・ご出張のあいだ、1日¥1,000で安心してお停めいただけます。空港まで送迎付き。
             </p>
             <div className="triad-tile__price">¥1,000<small>/ 1日</small></div>
-            <span className="triad-tile__cta">パーキングを見る <span className="triad-tile__arrow">→</span></span>
+            <span className="triad-tile__cta">空港パーキングを見る <span className="triad-tile__arrow">→</span></span>
           </Link>
           <Link className="triad-tile triad-tile--detailing" href="/detailing">
             <div className="triad-tile__char">磨</div>
@@ -127,7 +127,7 @@ export default function HomePage() {
               預かっている時間で、職人が手洗い洗車・磨き・本格コーティングから車内清掃まで施工。松竹梅の3プランからお選びいただけます。
             </p>
             <div className="triad-tile__price">¥5,000 〜 ¥50,000<small>松竹梅プラン</small></div>
-            <span className="triad-tile__cta">ディテイリングを見る <span className="triad-tile__arrow">→</span></span>
+            <span className="triad-tile__cta">カーディテイリングを見る <span className="triad-tile__arrow">→</span></span>
           </Link>
         </div>
       </section>
