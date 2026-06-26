@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'LocalBusiness',
-  name: 'ゼンリュウ (ゼンリュウレンタカー)',
+  name: 'ゼンリュウ 那覇空港パーキング × カーディテイリング',
   '@id': 'https://zenryu-p.jp/',
   url: 'https://zenryu-p.jp/',
   telephone: '+81-98-995-9805',
@@ -36,7 +36,7 @@ const jsonLd = {
     opens: '09:00',
     closes: '21:00',
   },
-  sameAs: ['https://www.instagram.com/zenryu_rentacar/'],
+  sameAs: ['https://www.instagram.com/zenryurentacar/'],
 };
 
 export default function Page() {

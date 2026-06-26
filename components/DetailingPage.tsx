@@ -14,7 +14,7 @@ export default function DetailingPage() {
   const [openFaq, setOpenFaq] = useState(0);
 
   const detailFaqs = [
-    { q: 'ディテイリングだけの依頼は可能ですか?', a: 'はい、パーキングをご利用にならない場合でも、コース単独でのご依頼を承ります。料金は松竹梅と同じ¥5,000 / ¥15,000 / ¥50,000〜でございます。お電話・LINEにてご相談ください。' },
+    { q: 'ディテイリングだけの依頼は可能ですか?', a: 'はい、パーキングをご利用にならない場合でも、コース単独でのご依頼を承ります。料金は松竹梅と同じ¥5,000 / ¥15,000 / ¥50,000〜でございます。お電話・Instagramにてご相談ください。' },
     { q: 'コーティングはどのくらい持続しますか?', a: '耐久性は使用環境・保管状況により異なります。施工後の定期メンテナンスや追加施工も承りますので、お車の状態に合わせてご提案いたします。' },
     { q: '輸入車・EV車でも施工可能ですか?', a: '欧州車・米国車・国産車・EV車に対応いたします。塗装の柔らかい欧州車も、車種特性を踏まえて丁寧に仕上げます。事前にお気軽にご相談ください。' },
     { q: '預ける前に車内を片付ける必要は?', a: 'クリーニング対象は内装パネル・シート・カーペット類です。お預かりした個人の荷物・書類はそのままケースに整理して保管いたしますが、貴重品はお持ち帰りいただくことを推奨しております。' },
@@ -35,7 +35,7 @@ export default function DetailingPage() {
       <Header current="detailing" />
 
       {/* Page hero */}
-      <section className="page-hero">
+      <section className="page-hero page-hero--detailing">
         <div className="page-hero__bg-mark">磨</div>
         <div className="page-hero__inner">
           <div className="page-hero__breadcrumb">
@@ -46,13 +46,13 @@ export default function DetailingPage() {
           <div className="page-hero__layout">
             <div>
               <div className="eyebrow">CAR DETAILING · カーディテイリング</div>
-              <h1 className="page-hero__title">
+              <h1 className="page-hero__title page-hero__title--nowrap">
                 沖縄の塩害・紫外線から、<br/>
                 <em>愛車を守る。</em>磨き上げる。<br/>
-                ディテイリング ¥5,000〜。
+                ディテイリング ¥5,000〜
               </h1>
               <p className="page-hero__lede">
-                那覇でカーディテイリングをお探しの方へ。手洗い洗車から本格的なガラスコーティングまで、ご用途に合わせた3つのコース (松竹梅) でご提供いたします。沖縄特有の塩害・紫外線にさらされた一台一台と向き合い、本来の艶を引き出します。
+                豊見城でカーディテイリングをお探しの方へ。手洗い洗車から本格的なガラスコーティング、さらに車内清掃まで、ご用途に合わせた3つのコース (松竹梅) でご提供いたします。沖縄特有の塩害・紫外線にさらされた一台一台と向き合い、外も内も本来の美しさを引き出します。
               </p>
             </div>
             <dl className="page-hero__meta">
@@ -106,8 +106,8 @@ export default function DetailingPage() {
       {/* Process */}
       <section className="process">
         <div className="section">
-          <div className="eyebrow">PROCESS · 6つの工程</div>
-          <h2 className="section-title">職人の手で、<br/><em>一台に向き合う。</em></h2>
+          <div className="eyebrow">PROCESS · 7つの工程</div>
+          <h2 className="section-title">一台一台、<em>丁寧に向き合う。</em></h2>
           <p className="section-lede">
             プレミア・ディテイリングは下地処理から仕上げまで合計12時間以上を要する工程です。
             一台ごとに最適な手順を組み立て、最高の状態に仕上げます。
@@ -128,7 +128,7 @@ export default function DetailingPage() {
       <section className="beforeafter">
         <div className="section">
           <div className="eyebrow">WORKS · 施工事例</div>
-          <h2 className="section-title">磨く前と、<br/>磨いた<em>あとと。</em></h2>
+          <h2 className="section-title">磨く前と、<br/>磨いた<em>後と。</em></h2>
           <p className="section-lede">
             施工後の艶・透明感をご覧ください。実車のお写真は、ご納車前にお客様にお送りいたします。
           </p>
@@ -219,9 +219,10 @@ export default function DetailingPage() {
 
       <CtaBand
         title="愛車を、<em>本来の姿へ。</em>"
-        sub="ディテイリング単独のご依頼も承ります。お電話・メールフォーム・LINEにてお気軽にご相談ください。"
-        primaryLabel="お問い合わせフォームへ"
-        primaryHref="#inquiry"
+        sub="ディテイリング単独のご依頼も承ります。お電話・公式Instagramにてお気軽にご相談ください。"
+        primaryLabel="Instagramへ"
+        primaryHref={data.company.instagram}
+        primaryExternal
       />
       <InquirySection
         defaultSubject="detailing"

@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { ZENRYU_DATA } from '@/lib/data';
 import { UtilBar } from './UtilBar';
@@ -14,6 +14,24 @@ export default function HomePage() {
   const data = ZENRYU_DATA;
   const c = data.company;
   const [openFaq, setOpenFaq] = useState(0);
+
+  useEffect(() => {
+    const els = document.querySelectorAll('.triad-tile__char');
+    if (els.length === 0 || !('IntersectionObserver' in window)) return;
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            e.target.classList.add('is-revealed');
+            io.unobserve(e.target);
+          }
+        });
+      },
+      { threshold: 0.25 }
+    );
+    els.forEach((el) => io.observe(el));
+    return () => io.disconnect();
+  }, []);
 
   return (
     <>
@@ -30,7 +48,7 @@ export default function HomePage() {
               那覇空港 パーキング × カーディテイリング
             </div>
             <h1 className="hero__title">
-              預けるあいだに、<em>磨かれる。</em>
+              預ける間に、<br/><em>磨かれる。</em>
             </h1>
             <p className="hero__lede">
               ゼンリュウの2つの事業は、<strong>空港パーキング</strong>と<strong>カーディテイリング</strong>。
@@ -58,20 +76,7 @@ export default function HomePage() {
 
           <div className="hero__visual">
             <div className="hero__photo">
-              <div className="hero__photo__placeholder">
-                <div className="hero__photo__label">[ HERO IMAGERY ]</div>
-                <div className="hero__photo__desc">那覇空港・施工中の高級セダン (実写差し替え予定)</div>
-              </div>
-            </div>
-            <div className="hero__card hero__card--trust">
-              <div className="hero__card__title">2つの事業</div>
-              <div className="hero__card__row"><span>パーキング</span><strong>¥1,000/日</strong></div>
-              <div className="hero__card__row"><span>ディテイリング</span><strong>松竹梅</strong></div>
-            </div>
-            <div className="hero__card hero__card--booking">
-              <div className="hero__card__title">ケア最短</div>
-              <div className="hero__card__big">¥5,000<span style={{ fontSize: 14, marginLeft: 4, color: 'var(--ink-mute)' }}>一式〜</span></div>
-              <div className="hero__card__small">梅コース・手洗い洗車と送迎付き<br/><span style={{ color: 'var(--gold)' }}>+ パーキング ¥1,000/日</span></div>
+              <img className="hero__photo__img" src="/assets/hero_section.png" alt="預けるあいだに、磨かれる。那覇空港 パーキング × カーディテイリング" />
             </div>
           </div>
         </div>
@@ -84,26 +89,10 @@ export default function HomePage() {
         <div className="concept__inner">
           <div className="eyebrow">CONCEPT · 私たちの発想</div>
           <h2 className="concept__title">
-            駐車している時間を、<em>車の価値が上がる時間へ。</em>
+            駐車している時間を、<br/><em>車の価値が上がる時間へ。</em>
           </h2>
-          <div className="concept__flow">
-            <div className="concept__flow__node">
-              <div className="concept__flow__char">出</div>
-              <div className="concept__flow__label">DEPART</div>
-              <div className="concept__flow__text">ご旅行・ご出張へ。愛車を空港でお預けください。</div>
-            </div>
-            <div className="concept__flow__arrow">→</div>
-            <div className="concept__flow__node">
-              <div className="concept__flow__char">磨</div>
-              <div className="concept__flow__label">CARE</div>
-              <div className="concept__flow__text">駐車しているあいだに、職人が洗車・磨き・コーティングを施工。</div>
-            </div>
-            <div className="concept__flow__arrow">→</div>
-            <div className="concept__flow__node">
-              <div className="concept__flow__char">帰</div>
-              <div className="concept__flow__label">RETURN</div>
-              <div className="concept__flow__text">ご帰着便に合わせて、整えられたお車でお出迎え。</div>
-            </div>
+          <div className="concept__image">
+            <img src="/assets/concept.png" alt="出（ご旅行・ご出張へ）→ 磨（駐車中に洗車・磨き・コーティングを施工）→ 帰（整えられたお車でお出迎え）" />
           </div>
         </div>
       </section>
@@ -112,13 +101,13 @@ export default function HomePage() {
       <section className="triad" id="services">
         <div className="section">
           <div className="eyebrow">SERVICES · 2つの事業</div>
-          <h2 className="section-title">ゼンリュウの、2つの本業。</h2>
+          <h2 className="section-title">ゼンリュウの2つの柱。</h2>
           <p className="section-lede">
             「空港パーキング」と「カーディテイリング」。お預かりした駐車時間がそのまま施工時間になる——2つの事業が組み合わさることで、停めるだけで愛車が磨き上がります。
           </p>
         </div>
         <div className="triad__grid triad__grid--two">
-          <Link className="triad-tile" href="/parking">
+          <Link className="triad-tile triad-tile--parking" href="/parking">
             <div className="triad-tile__char">駐</div>
             <div className="triad-tile__num">SERVICE · 01</div>
             <h3 className="triad-tile__name">空港パーキング</h3>
@@ -129,13 +118,13 @@ export default function HomePage() {
             <div className="triad-tile__price">¥1,000<small>/ 1日</small></div>
             <span className="triad-tile__cta">パーキングを見る <span className="triad-tile__arrow">→</span></span>
           </Link>
-          <Link className="triad-tile" href="/detailing">
+          <Link className="triad-tile triad-tile--detailing" href="/detailing">
             <div className="triad-tile__char">磨</div>
             <div className="triad-tile__num">SERVICE · 02</div>
             <h3 className="triad-tile__name">カーディテイリング</h3>
             <div className="triad-tile__en">CAR DETAILING</div>
             <p className="triad-tile__desc">
-              預かっている時間で、職人が手洗い洗車・磨き・本格コーティングまで施工。松竹梅の3プランからお選びいただけます。
+              預かっている時間で、職人が手洗い洗車・磨き・本格コーティングから車内清掃まで施工。松竹梅の3プランからお選びいただけます。
             </p>
             <div className="triad-tile__price">¥5,000 〜 ¥50,000<small>松竹梅プラン</small></div>
             <span className="triad-tile__cta">ディテイリングを見る <span className="triad-tile__arrow">→</span></span>
@@ -193,7 +182,7 @@ export default function HomePage() {
                 <dd><strong>那覇空港 国内線・国際線対応</strong>パーキングご利用のお客様</dd>
                 <dt>Instagram</dt>
                 <dd>
-                  <a href={c.instagram} target="_blank" rel="noopener" style={{ color: 'var(--gold)' }}>@zenryu_rentacar</a>
+                  <a href={c.instagram} target="_blank" rel="noopener" style={{ color: 'var(--gold)' }}>@zenryurentacar</a>
                 </dd>
               </dl>
             </div>
@@ -219,9 +208,6 @@ export default function HomePage() {
           <div style={{ height: 32 }}></div>
           <div className="company__layout">
             <div className="company__visual">
-              <div className="company__seal">
-                <div className="company__seal__char">全</div>
-              </div>
               <div className="company__motto">
                 「全力で。丁寧に。お預かりした一台を、家族のように。」
               </div>
@@ -229,12 +215,12 @@ export default function HomePage() {
             <div>
               <table className="company__table">
                 <tbody>
-                  <tr><th>商号</th><td><strong>ゼンリュウ</strong></td></tr>
+                  <tr><th>商号</th><td><strong>ゼンリュウレンタカー</strong></td></tr>
                   <tr><th>所在地</th><td>{c.address}</td></tr>
                   <tr><th>電話</th><td>{c.phone}</td></tr>
                   <tr><th>営業時間</th><td>{c.hours}</td></tr>
                   <tr><th>事業内容</th><td>① 空港パーキング事業<br/>② カーディテイリング事業</td></tr>
-                  <tr><th>Instagram</th><td><a href={c.instagram} target="_blank" rel="noopener" style={{ color: 'var(--gold)' }}>@zenryu_rentacar</a></td></tr>
+                  <tr><th>Instagram</th><td><a href={c.instagram} target="_blank" rel="noopener" style={{ color: 'var(--gold)' }}>@zenryurentacar</a></td></tr>
                 </tbody>
               </table>
             </div>
@@ -266,15 +252,17 @@ export default function HomePage() {
       <InquirySection
         defaultSubject="parking"
         eyebrow="INQUIRY · お問い合わせ"
-        title="ご予約・ご相談は、お電話 / メールにて。"
+        title="ご予約・ご相談は、<br/>お電話 / Instagram にて。"
         lede="パーキング・カーディテイリング、いずれのお問い合わせも下記より承ります。営業時間内にスタッフがご対応いたします。"
       />
 
       <CtaBand
         title="愛車のことは、<em>ゼンリュウ</em>へ。"
-        sub="ご予約・ご相談はお電話、メールフォーム、LINEにて承ります。"
-        primaryLabel="パーキングを予約する"
-        primaryHref="/parking"
+        sub="ご予約・ご相談はお電話、または公式Instagramのダイレクトメッセージにて承ります。"
+        primaryLabel="Instagramへ"
+        primaryHref={c.instagram}
+        primaryExternal
+        bgImage="/assets/cta-parking.png"
       />
       <Footer />
     </>

@@ -134,6 +134,17 @@ img { display: block; max-width: 100%; }
   border-radius: 50%;
   opacity: 0.3;
 }
+.brand__mark--img {
+  overflow: hidden;
+  background: var(--bg);
+}
+.brand__mark--img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.brand__mark--img::after { display: none; }
 .brand__name {
   font-family: var(--serif);
   font-weight: 500;
@@ -529,6 +540,14 @@ body.nav-open { overflow: hidden; }
   overflow: hidden;
   border: 1px solid var(--line);
 }
+.hero__photo__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
 .hero__photo__placeholder {
   position: absolute;
   inset: 0;
@@ -692,12 +711,17 @@ body.nav-open { overflow: hidden; }
   position: relative;
 }
 .concept__title em::after {
-  content: "";
-  position: absolute;
-  left: 0; right: 0; bottom: -4px;
-  height: 1px;
-  background: var(--gold);
-  opacity: 0.6;
+  content: none;
+}
+.concept__image {
+  border: 1px solid var(--line);
+  background: var(--bg-card);
+  overflow: hidden;
+}
+.concept__image img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 .concept__flow {
   display: grid;
@@ -771,6 +795,26 @@ body.nav-open { overflow: hidden; }
 }
 .triad-tile:last-child { border-right: none; }
 .triad-tile:hover { background: var(--bg-soft); }
+.triad-tile.triad-tile--parking,
+.triad-tile.triad-tile--parking:hover {
+  background-color: #e7e0d0;
+  background-image:
+    linear-gradient(rgba(236, 230, 216, 0.86), rgba(221, 212, 192, 0.9)),
+    url('/assets/parking.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.triad-tile.triad-tile--detailing,
+.triad-tile.triad-tile--detailing:hover {
+  background-color: #e7e0d0;
+  background-image:
+    linear-gradient(rgba(236, 230, 216, 0.86), rgba(221, 212, 192, 0.9)),
+    url('/assets/detailing.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
 .triad-tile:hover .triad-tile__char { color: var(--gold-bright); transform: scale(1.05) rotate(-2deg); }
 .triad-tile:hover .triad-tile__arrow { transform: translateX(6px); }
 .triad-tile__char {
@@ -783,6 +827,18 @@ body.nav-open { overflow: hidden; }
   right: 0;
   transition: color 0.5s, transform 0.5s;
   pointer-events: none;
+}
+@media (max-width: 760px) {
+  .triad-tile__char {
+    color: rgba(201, 164, 73, 0.5);
+    opacity: 0;
+    transform: translateY(32px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  .triad-tile__char.is-revealed {
+    opacity: 1;
+    transform: none;
+  }
 }
 .triad-tile__num {
   font-family: var(--mono);
@@ -820,14 +876,15 @@ body.nav-open { overflow: hidden; }
   display: inline-block;
   font-family: var(--serif);
   font-size: 20px;
-  color: var(--gold);
+  font-weight: 700;
+  color: var(--ink);
   padding-bottom: 4px;
   border-bottom: 1px solid var(--gold);
   margin-bottom: 28px;
   letter-spacing: 0.04em;
   position: relative;
   z-index: 1;
-  background: linear-gradient(to right, var(--bg) 0%, var(--bg) 100%);
+  background: transparent;
 }
 .triad-tile__price small {
   font-family: var(--sans);
@@ -849,221 +906,6 @@ body.nav-open { overflow: hidden; }
 }
 .triad-tile__arrow { transition: transform 0.3s; }
 
-/* ---------- Sub-business teaser (rental + used cars) ---------- */
-.subbiz {
-  background: var(--bg-soft);
-  border-top: 1px solid var(--line);
-}
-.subbiz__grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 32px;
-}
-.subbiz__card {
-  background: var(--bg);
-  border: 1px solid var(--line);
-  padding: 56px 48px;
-  display: flex;
-  flex-direction: column;
-  gap: 28px;
-  transition: border-color 0.3s;
-  position: relative;
-  overflow: hidden;
-}
-.subbiz__card:hover { border-color: var(--gold); }
-.subbiz__card__bg-char {
-  position: absolute;
-  font-family: var(--serif);
-  font-size: 220px;
-  color: rgba(201, 164, 73, 0.04);
-  bottom: -40px;
-  right: -20px;
-  line-height: 1;
-  pointer-events: none;
-}
-.subbiz__card__head {
-  position: relative;
-}
-.subbiz__card__num {
-  font-family: var(--mono);
-  font-size: 10px;
-  letter-spacing: 0.28em;
-  color: var(--gold);
-  margin-bottom: 14px;
-  text-transform: uppercase;
-}
-.subbiz__card__title {
-  font-family: var(--serif);
-  font-size: 30px;
-  font-weight: 500;
-  margin: 0 0 8px;
-  letter-spacing: 0.04em;
-}
-.subbiz__card__en {
-  font-family: var(--mono);
-  font-size: 11px;
-  letter-spacing: 0.24em;
-  color: var(--ink-mute);
-  text-transform: uppercase;
-}
-.subbiz__card__price {
-  font-family: var(--serif);
-  font-size: 36px;
-  color: var(--gold);
-  letter-spacing: 0.04em;
-  padding-bottom: 18px;
-  border-bottom: 1px solid var(--line);
-  position: relative;
-}
-.subbiz__card__price small {
-  font-family: var(--sans);
-  font-size: 13px;
-  color: var(--ink-mute);
-  margin-left: 6px;
-}
-.subbiz__card__points {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: grid;
-  gap: 18px;
-  position: relative;
-}
-.subbiz__card__points li {
-  display: grid;
-  grid-template-columns: 24px 1fr;
-  gap: 14px;
-  font-size: 13px;
-  line-height: 1.7;
-  color: var(--ink-soft);
-}
-.subbiz__card__points strong {
-  font-family: var(--serif);
-  font-weight: 500;
-  color: var(--ink);
-  font-size: 15px;
-  letter-spacing: 0.04em;
-}
-.subbiz__card__points em {
-  font-style: normal;
-  font-family: var(--mono);
-  color: var(--gold);
-  font-weight: 500;
-  font-size: 12px;
-}
-
-/* ---------- Rental car lineup ---------- */
-.rental-list {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-}
-.rental-car {
-  background: var(--bg);
-  border: 1px solid var(--line);
-  padding: 28px 28px 24px;
-  display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 14px 24px;
-  transition: border-color 0.3s;
-}
-.rental-car:hover { border-color: var(--gold); }
-.rental-car__head { grid-column: 1 / -1; }
-.rental-car__cat {
-  font-family: var(--mono);
-  font-size: 10px;
-  letter-spacing: 0.22em;
-  color: var(--gold);
-  text-transform: uppercase;
-  margin-bottom: 8px;
-  display: flex;
-  gap: 10px;
-  align-items: center;
-}
-.rental-car__cat__chip {
-  padding: 2px 8px;
-  border: 1px solid var(--line);
-  color: var(--ink-soft);
-  font-size: 9px;
-  text-transform: none;
-  letter-spacing: 0.08em;
-}
-.rental-car__name {
-  font-family: var(--serif);
-  font-size: 20px;
-  font-weight: 500;
-  letter-spacing: 0.04em;
-  margin: 0;
-}
-.rental-car__spec {
-  font-size: 12px;
-  color: var(--ink-soft);
-  line-height: 1.85;
-  border-top: 1px dashed var(--line);
-  padding-top: 14px;
-  grid-column: 1 / -1;
-}
-.rental-car__spec dt {
-  font-family: var(--mono);
-  font-size: 9px;
-  letter-spacing: 0.16em;
-  color: var(--ink-mute);
-  text-transform: uppercase;
-  margin-right: 8px;
-  display: inline;
-}
-.rental-car__spec dd {
-  display: inline;
-  margin: 0;
-  color: var(--ink);
-}
-.rental-car__spec dd::after {
-  content: " · ";
-  color: var(--line);
-}
-.rental-car__spec dd:last-child::after { content: ""; }
-.rental-car__prices {
-  grid-column: 1 / -1;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 8px 16px;
-  border-top: 1px dashed var(--line);
-  padding-top: 14px;
-  font-size: 12px;
-}
-.rental-car__prices__label {
-  font-family: var(--mono);
-  font-size: 9px;
-  letter-spacing: 0.2em;
-  color: var(--ink-mute);
-  text-transform: uppercase;
-  margin-bottom: 4px;
-}
-.rental-car__prices__val {
-  font-family: var(--serif);
-  font-size: 18px;
-  color: var(--gold);
-}
-.rental-car__prices__val small {
-  font-family: var(--sans);
-  font-size: 11px;
-  color: var(--ink-mute);
-  margin-left: 4px;
-}
-.rental-list__note {
-  margin-top: 24px;
-  font-size: 11px;
-  color: var(--ink-mute);
-  font-family: var(--mono);
-  letter-spacing: 0.08em;
-  line-height: 1.8;
-}
-.rental-cta {
-  margin-top: 36px;
-  display: flex;
-  gap: 14px;
-  flex-wrap: wrap;
-}
 
 /* ---------- Trust strip ---------- */
 .trust-strip {
@@ -2393,6 +2235,18 @@ body.nav-open { overflow: hidden; }
   margin-top: 10px;
   line-height: 1.7;
 }
+.inquiry__channels {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-top: 48px;
+}
+.inquiry__channels .inquiry__channel {
+  padding: 40px 36px;
+}
+@media (max-width: 760px) {
+  .inquiry__channels { grid-template-columns: 1fr; }
+}
 
 .inquiry__form.is-submitted .inquiry__form__inner { display: none; }
 .inquiry__success {
@@ -2692,6 +2546,24 @@ body.nav-open { overflow: hidden; }
   overflow: hidden;
   border-bottom: 1px solid var(--line);
 }
+.page-hero--parking {
+  background-color: #e7e0d0;
+  background-image:
+    linear-gradient(rgba(236, 230, 216, 0.88), rgba(221, 212, 192, 0.92)),
+    url('/assets/parking.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.page-hero--detailing {
+  background-color: #e7e0d0;
+  background-image:
+    linear-gradient(rgba(236, 230, 216, 0.88), rgba(221, 212, 192, 0.92)),
+    url('/assets/detailing.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
 .page-hero__inner {
   max-width: 1280px;
   margin: 0 auto;
@@ -2727,6 +2599,10 @@ body.nav-open { overflow: hidden; }
   margin: 0 0 24px;
 }
 .page-hero__title em { color: var(--gold); font-style: normal; font-weight: 500; }
+.page-hero__title--nowrap { white-space: nowrap; }
+@media (max-width: 760px) {
+  .page-hero__title--nowrap { white-space: normal; }
+}
 .page-hero__lede {
   font-size: 15px;
   line-height: 2;
@@ -3136,8 +3012,7 @@ body.nav-open { overflow: hidden; }
   .voice__grid, .access__grid, .company__layout, .contact__grid,
   .services__grid, .hub__grid, .page-hero__layout, .dt-menu__grid,
   .process__list, .beforeafter__grid, .artisan__layout, .crosslink__card,
-  .inquiry__shell, .inquiry__radio-row, .triad__grid, .subbiz__grid,
-  .rental-list {
+  .inquiry__shell, .inquiry__radio-row, .triad__grid {
     grid-template-columns: 1fr;
   }
   /* Prevent single-column grid tracks from expanding past the viewport

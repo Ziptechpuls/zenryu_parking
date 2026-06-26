@@ -14,7 +14,6 @@ export function Header({ current }: { current?: string }) {
   }, [menuOpen]);
 
   const close = () => setMenuOpen(false);
-  const inquiryHref = current === 'detailing' ? '/detailing#inquiry' : '/parking#inquiry';
 
   const link = (key: string, href: string, label: string) => (
     <Link href={href} className={current === key ? 'is-current' : ''}>{label}</Link>
@@ -25,7 +24,7 @@ export function Header({ current }: { current?: string }) {
       <header className="nav">
         <div className="nav__inner">
           <Link className="brand" href="/">
-            <img className="brand__logo" src="/assets/zenryu-logo.png" alt="ゼンリュウレンタカー" />
+            <img className="brand__logo" src="/assets/zenryu-logo.png" alt="ゼンリュウ パーキング × カーディテイリング" />
           </Link>
           <nav className="nav__links">
             {link('home', '/', 'ホーム')}
@@ -36,7 +35,7 @@ export function Header({ current }: { current?: string }) {
           </nav>
           <div className="nav__cta">
             <a className="btn btn--outline btn--sm" href={`tel:${c.phone.replace(/-/g, '')}`}>お電話</a>
-            <Link className="btn btn--gold btn--sm" href={inquiryHref}>お問い合わせ <span className="btn__arrow">→</span></Link>
+            <a className="btn btn--gold btn--sm" href={c.instagram} target="_blank" rel="noopener">Instagramへ <span className="btn__arrow">→</span></a>
           </div>
           <button
             className={`nav__menu-btn ${menuOpen ? 'is-open' : ''}`}
@@ -57,9 +56,9 @@ export function Header({ current }: { current?: string }) {
         <Link href="/#company" onClick={close}>会社概要</Link>
         <Link href="/#access" onClick={close}>アクセス</Link>
         <div className="nav__drawer__cta">
-          <Link className="btn btn--gold btn--lg" href={inquiryHref} onClick={close}>
-            お問い合わせ <span className="btn__arrow">→</span>
-          </Link>
+          <a className="btn btn--gold btn--lg" href={c.instagram} target="_blank" rel="noopener" onClick={close}>
+            Instagramへ <span className="btn__arrow">→</span>
+          </a>
         </div>
         <div className="nav__drawer__contact">
           <small>TEL · お電話</small>

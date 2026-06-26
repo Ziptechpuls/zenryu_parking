@@ -26,7 +26,7 @@ export default function ParkingPage() {
       <UtilBar />
       <Header current="parking" />
 
-      <section className="page-hero">
+      <section className="page-hero page-hero--parking">
         <div className="page-hero__bg-mark">磨</div>
         <div className="page-hero__inner">
           <div className="page-hero__breadcrumb">
@@ -38,7 +38,7 @@ export default function ParkingPage() {
             <div>
               <div className="eyebrow">CAR CARE &amp; PARKING</div>
               <h1 className="page-hero__title">
-                預けるあいだに、<em>磨かれる。</em>
+                預ける間に、<br/><em>磨かれる。</em>
               </h1>
               <p className="page-hero__lede">
                 那覇空港で愛車をお預かりし、ご旅行・ご出張のあいだに手洗い洗車・コーティングまで施工いたします。パーキングは1日¥1,000、カーケアコースは松竹梅よりご選択いただけます。
@@ -62,26 +62,10 @@ export default function ParkingPage() {
         <div className="concept__inner">
           <div className="eyebrow">CONCEPT · 私たちの発想</div>
           <h2 className="concept__title">
-            駐車している時間を、<em>車の価値が上がる時間へ。</em>
+            駐車している時間を、<br/><em>車の価値が上がる時間へ。</em>
           </h2>
-          <div className="concept__flow">
-            <div className="concept__flow__node">
-              <div className="concept__flow__char">出</div>
-              <div className="concept__flow__label">DEPART</div>
-              <div className="concept__flow__text">ご旅行・ご出張へ。愛車を空港でお預けください。</div>
-            </div>
-            <div className="concept__flow__arrow">→</div>
-            <div className="concept__flow__node">
-              <div className="concept__flow__char">磨</div>
-              <div className="concept__flow__label">CARE</div>
-              <div className="concept__flow__text">ご滞在中に職人がカーケア・コーティングを施工します。</div>
-            </div>
-            <div className="concept__flow__arrow">→</div>
-            <div className="concept__flow__node">
-              <div className="concept__flow__char">帰</div>
-              <div className="concept__flow__label">RETURN</div>
-              <div className="concept__flow__text">ご帰着便に合わせて、整えられたお車でお出迎え。</div>
-            </div>
+          <div className="concept__image">
+            <img src="/assets/concept.png" alt="出（ご旅行・ご出張へ）→ 磨（駐車中に洗車・磨き・コーティングを施工）→ 帰（整えられたお車でお出迎え）" />
           </div>
         </div>
       </section>
@@ -137,9 +121,9 @@ export default function ParkingPage() {
             <div className="service-tile">
               <div className="service-tile__num">04</div>
               <div className="service-tile__icon">便</div>
-              <h3 className="service-tile__title">LINEで便利に連絡</h3>
+              <h3 className="service-tile__title">電話・Instagramで連絡</h3>
               <p className="service-tile__desc">
-                ご予約後の便変更・延長など、お電話・LINEでご相談を承ります。営業時間内にスタッフが丁寧にご対応いたします。
+                ご予約後の便変更・延長など、お電話・Instagramのダイレクトメッセージでご相談を承ります。営業時間内にスタッフが丁寧にご対応いたします。
               </p>
               <ul className="service-tile__list">
                 <li>営業時間内に受付</li>
@@ -157,7 +141,7 @@ export default function ParkingPage() {
           <div className="plans__header">
             <div>
               <div className="eyebrow">PRICING · 松竹梅プラン</div>
-              <h2 className="section-title">3つのプランから、仕上がりをお選びください。</h2>
+              <h2 className="section-title">3つのプランから、<br/>仕上がりをお選びください。</h2>
             </div>
           </div>
 
@@ -230,8 +214,8 @@ export default function ParkingPage() {
         defaultSubject="parking"
         defaultPlan={selectedPlan}
         eyebrow="INQUIRY · ご予約・お問い合わせ"
-        title="ご予約・ご相談は、お電話 / メールにて。"
-        lede="下記フォームよりご連絡いただくか、お電話・LINEにても承ります。空き状況もお気軽にお問い合わせください。"
+        title="ご予約・ご相談は、<br/>お電話 / Instagram にて。"
+        lede="お電話、または公式Instagramのダイレクトメッセージにて承ります。空き状況もお気軽にお問い合わせください。"
       />
 
       {/* Cross-link to detailing */}
@@ -276,9 +260,11 @@ export default function ParkingPage() {
 
       <CtaBand
         title="愛車のことは、<em>ゼンリュウ</em>へ。"
-        sub="ご予約・ご相談はお電話、メールフォーム、LINEにて承ります。初めてのお客様も、スタッフが丁寧にご案内いたします。"
-        primaryLabel="お問い合わせフォームへ"
-        primaryHref="#inquiry"
+        sub="ご予約・ご相談はお電話、または公式Instagramのダイレクトメッセージにて承ります。初めてのお客様も、スタッフが丁寧にご案内いたします。"
+        primaryLabel="Instagramへ"
+        primaryHref={data.company.instagram}
+        primaryExternal
+        bgImage="/assets/cta-parking.png"
       />
       <Footer />
     </>

@@ -9,14 +9,15 @@ export function Footer() {
         <div className="footer__top">
           <div className="footer__brand">
             <div className="brand">
-              <div className="brand__mark">全</div>
+              <div className="brand__mark brand__mark--img">
+                <img src="/zenrryu-favicon.ico" alt="ゼンリュウレンタカー" />
+              </div>
               <div>
-                <div className="brand__name">ゼンリュウ</div>
-                <div className="brand__sub">OKINAWA MOBILITY</div>
+                <div className="brand__name">ゼンリュウレンタカー</div>
+                <div className="brand__sub">PARKING &amp; DETAILING</div>
               </div>
             </div>
             <p>
-              ゼンリュウ<br/>
               {c.address}<br/>
               営業 {c.hours}
             </p>
@@ -34,20 +35,11 @@ export function Footer() {
               <li><Link href="/#company">会社概要</Link></li>
               <li><Link href="/#access">アクセス</Link></li>
               <li><Link href="/#faq">よくあるご質問</Link></li>
-              <li><Link href="/#voice">お客様の声</Link></li>
-            </ul>
-          </div>
-          <div className="footer__col">
-            <h4>Contact</h4>
-            <ul>
-              <li>{c.phone}</li>
-              <li>営業 {c.hours}</li>
-              <li><a href={c.instagram} target="_blank" rel="noopener">Instagram</a></li>
             </ul>
           </div>
         </div>
         <div className="footer__bot">
-          <span>© 2026 ZENRYU Okinawa Mobility</span>
+          <span>© 2026 ZENRYU Parking &amp; Detailing</span>
           <span>利用規約 · プライバシーポリシー · 特定商取引法に基づく表記</span>
         </div>
       </div>

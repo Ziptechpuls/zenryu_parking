@@ -6,8 +6,6 @@ export interface Company {
   phone: string;
   hours: string;
   instagram: string;
-  rentalUrl: string;
-  reserveUrl: string;
 }
 
 export interface PlanFeature {
@@ -34,27 +32,6 @@ export interface PriceExample {
   days: number;
   plan: string;
   label: string;
-}
-
-export interface RentalCar {
-  name: string;
-  category: string;
-  smoking: string;
-  capacity: string;
-  equipment: string;
-  regular: number;
-  peak: number;
-}
-
-export interface Rental {
-  intro: string;
-  cars: RentalCar[];
-  options: { name: string; price: string }[];
-}
-
-export interface UsedCars {
-  status: string;
-  points: { title: string; desc: string }[];
 }
 
 export interface Step {
@@ -112,8 +89,6 @@ export interface ZenryuData {
   plans: Plan[];
   parking: { pricePerDay: number; note: string };
   priceExamples: PriceExample[];
-  rental: Rental;
-  usedCars: UsedCars;
   steps: Step[];
   detailingMenu: DetailingMenuItem[];
   detailingProcess: ProcessStep[];
@@ -129,9 +104,7 @@ export const ZENRYU_DATA: ZenryuData = {
     address: '〒901-0231 沖縄県豊見城市我那覇 152番地8',
     phone: '098-995-9805',
     hours: '9:00 〜 21:00',
-    instagram: 'https://www.instagram.com/zenryu_rentacar/',
-    rentalUrl: 'https://www.zenryurentacar.com/',
-    reserveUrl: 'https://www.rentacar-samurai.jp/zenryu-rentacar',
+    instagram: 'https://www.instagram.com/zenryurentacar/',
   },
 
   /* カーケアコース 松竹梅 — 固定料金 (パーキングは別途加算) */
@@ -211,35 +184,6 @@ export const ZENRYU_DATA: ZenryuData = {
     { case: 'GW・年末年始', days: 7, plan: 'matsu', label: '長期休暇中に本格コーティング' },
   ],
 
-  /* レンタカー (実車両ラインナップ from zenryurentacar.com) */
-  rental: {
-    intro: '沖縄のコンパクトカーレンタル専門店。全車両に自社施工のコーティングを施し、清潔な状態でお渡しいたします。',
-    cars: [
-      { name: 'トヨタ タンク / トール / ルーミー', category: 'コンパクトカー', smoking: '禁煙車', capacity: '5名', equipment: 'AT車・カーナビ・バックモニター・ETC・Bluetooth', regular: 7700, peak: 10000 },
-      { name: 'スズキ ソリオ', category: 'コンパクトカー', smoking: '禁煙車', capacity: '5名', equipment: 'カーナビ・ETC・バックモニター・Bluetooth', regular: 8800, peak: 10000 },
-      { name: 'トヨタ アクア', category: 'エコカー', smoking: '禁煙車', capacity: '5名', equipment: 'カーナビ・ETC・Bluetooth', regular: 7700, peak: 10000 },
-      { name: 'トヨタ タンク', category: 'コンパクトカー', smoking: '電子タバコOK', capacity: '5名', equipment: 'ナビ・ETC・バックモニター・Bluetooth・充電器', regular: 7700, peak: 10000 },
-      { name: 'スズキ ソリオ', category: 'コンパクトカー', smoking: '電子タバコOK', capacity: '5名', equipment: 'カーナビ・ETC・バックモニター・Bluetooth', regular: 7700, peak: 10000 },
-      { name: 'ホンダ フリード ハイブリッド', category: 'ワゴン', smoking: '禁煙車', capacity: '7名', equipment: 'カーナビ・バックモニター・ETC・ドライブレコーダー', regular: 8800, peak: 10000 },
-      { name: '三菱 デリカ D:5', category: 'ミニバン', smoking: '禁煙車', capacity: '7名', equipment: 'ALPINEディスプレイオーディオ', regular: 11000, peak: 18000 },
-    ],
-    options: [
-      { name: 'NOC補償', price: '1,100円 / 日' },
-      { name: 'チャイルドシート', price: '550円 / 回' },
-      { name: 'ジュニアシート', price: '550円 / 回' },
-    ],
-  },
-
-  /* 認定中古車 — 事業準備中 */
-  usedCars: {
-    status: '準備中',
-    points: [
-      { title: '自社管理車両', desc: 'レンタカーとして自社で運用し、整備履歴・走行状況を把握した車両のみを販売予定です。' },
-      { title: '自社技術でリフレッシュ', desc: 'ご納車前に職人がディテイリング。内外装ともに整えた状態でお渡しする予定です。' },
-      { title: '「ゼンリュウ認定」', desc: '独自の品質基準をクリアした車両のみを「認定中古車」としてご案内する予定です。' },
-    ],
-  },
-
   /* ご利用の流れ */
   steps: [
     { num: '01', glyph: '一', title: '事前予約', desc: 'お電話・メール・LINEにてご予約。ご出発予定日とコースをお伝えください。' },
@@ -261,8 +205,9 @@ export const ZENRYU_DATA: ZenryuData = {
     { num: '02', title: '手洗い・水垢落とし', desc: '中性シャンプーで2層洗いの後、ガラス・ボディーの水垢を専用ケミカルで除去します。' },
     { num: '03', title: '下地研磨', desc: '微細な傷を丁寧にポリッシング、塗装本来の艶を引き出します。(松のみ)' },
     { num: '04', title: 'ガラスコーティング', desc: '硬化型ガラスコーティング剤を塗布し、ブースで完全硬化させます。(松のみ)' },
-    { num: '05', title: '撥水・仕上げ', desc: '高機能撥水コートとタイヤワックスで、視界と足元まで整えます。' },
-    { num: '06', title: '最終検品・引渡', desc: '隅々まで点検後、ご納車前に施工後のお写真をお送りいたします。' },
+    { num: '05', title: '車内清掃', desc: '内装パネル・シート・カーペットを専用機材で丁寧にクリーニング。車内の隅々まで気持ちよく仕上げます。' },
+    { num: '06', title: '撥水・仕上げ', desc: '高機能撥水コートとタイヤワックスで、視界と足元まで整えます。' },
+    { num: '07', title: '最終検品・引渡', desc: '隅々まで点検後、ご納車前に施工後のお写真をお送りいたします。' },
   ],
 
   /* 職人プロフィール — 実在の情報が揃うまで非表示 */
