@@ -56,7 +56,7 @@ export default function HomePage() {
             </p>
             <div className="hero__actions">
               <Link className="btn btn--gold btn--lg" href="/parking">那覇空港パーキングを見る</Link>
-              <Link className="btn btn--ghost btn--lg" href="/detailing">カーディテイリングを見る</Link>
+              <Link className="btn btn--gold btn--lg" href="/detailing">カーディテイリングを見る</Link>
             </div>
             <div className="hero__stats">
               <div className="hero__stat">
@@ -95,7 +95,7 @@ export default function HomePage() {
       <section className="triad" id="services">
         <div className="section">
           <div className="eyebrow">SERVICES · 2つの事業</div>
-          <h2 className="section-title">ゼンリュウの2つの柱</h2>
+          <h2 className="section-title heading-1line-sp">ゼンリュウの2つの柱</h2>
           <p className="section-lede">
             「空港パーキング」と「カーディテイリング」。お預かりした駐車時間がそのまま施工時間になる——2つの事業が組み合わさることで、停めるだけで愛車が磨き上がります。
           </p>
@@ -251,7 +251,7 @@ export default function HomePage() {
       />
 
       <CtaBand
-        title="愛車のことは、<em>ゼンリュウ</em>へ"
+        title="愛車のことは、<br class='br-sp'/><em>ゼンリュウ</em>へ"
         sub="ご予約・ご相談はお電話、または公式Instagramのダイレクトメッセージにて承ります。"
         primaryLabel="Instagramへ"
         primaryHref={c.instagram}

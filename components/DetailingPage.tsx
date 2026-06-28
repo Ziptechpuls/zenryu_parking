@@ -58,7 +58,7 @@ export default function DetailingPage() {
           <div className="plans__header">
             <div>
               <div className="eyebrow">MENU · 松竹梅コース</div>
-              <h2 className="section-title">豊見城のカーディテイリング、<br/>三つの<em>コース</em></h2>
+              <h2 className="section-title">豊見城のカーディテイリング<br/>三つの<em>コース</em></h2>
             </div>
           </div>
 
@@ -70,10 +70,16 @@ export default function DetailingPage() {
               >
                 {p.featured && <div className="plan-card__ribbon">人気No.1</div>}
                 {p.premium && <div className="plan-card__ribbon plan-card__ribbon--premium">Premium</div>}
-                <div className="plan-card__char">{p.char}</div>
-                <div className="plan-card__romaji">{p.romaji}</div>
-                <h3 className="plan-card__name">{p.name}</h3>
-                <p className="plan-card__tagline">{p.tagline}</p>
+                <div className="plan-card__head">
+                  <div className="plan-card__char-wrap">
+                    <div className="plan-card__char">{p.char}</div>
+                    <div className="plan-card__romaji">{p.romaji}</div>
+                  </div>
+                  <div className="plan-card__head-body">
+                    <h3 className="plan-card__name">{p.name}</h3>
+                    <p className="plan-card__tagline">{p.tagline}</p>
+                  </div>
+                </div>
                 <div className="plan-card__price">
                   <span className="plan-card__price__yen">¥</span>
                   <span className="plan-card__price__total">{p.price.toLocaleString()}</span>
@@ -208,7 +214,7 @@ export default function DetailingPage() {
       <InquirySection
         defaultSubject="detailing"
         eyebrow="INQUIRY · お問い合わせ"
-        title="ディテイリングのご相談は<br/>こちらから"
+        title="ディテイリングの<br/>ご相談はこちらから"
         lede="お車の状態・ご予算・ご希望の仕上がりなど、どのようなご相談でも職人が丁寧にヒアリングいたします。"
       />
       <Footer />

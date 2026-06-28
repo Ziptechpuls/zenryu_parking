@@ -67,7 +67,7 @@ export default function ParkingPage() {
       <section className="services">
         <div className="section">
           <div className="eyebrow">WHY · 選ばれる理由</div>
-          <h2 className="section-title">那覇空港パーキングで、選ばれる4つの理由</h2>
+          <h2 className="section-title heading-1line-sp">那覇空港パーキングで<br className="br-sp" /><em>選ばれる4つの理由</em></h2>
           <p className="section-lede">
             ご旅行中・ご出張中の不安をすべて取り除く、ゼンリュウの那覇空港パーキング。駐車場の予約から空港送迎、お預かり中のカーケアまで一貫して承ります。
           </p>
@@ -199,7 +199,7 @@ export default function ParkingPage() {
       </section>
 
       <CtaBand
-        title="愛車のことは、<em>ゼンリュウ</em>へ"
+        title="愛車のことは、<br class='br-sp'/><em>ゼンリュウ</em>へ"
         sub="ご予約・ご相談はお電話、または公式Instagramのダイレクトメッセージにて承ります。初めてのお客様も、スタッフが丁寧にご案内いたします。"
         primaryLabel="Instagramへ"
         primaryHref={data.company.instagram}

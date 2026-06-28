@@ -37,7 +37,7 @@ export function InquirySection({ id, eyebrow, title, lede }: InquirySectionProps
     <section className="inquiry" id={id || 'inquiry'}>
       <div className="section section--narrow">
         <div className="eyebrow">{eyebrow || 'INQUIRY · お問い合わせ'}</div>
-        <h2 className="section-title" dangerouslySetInnerHTML={{ __html: title || 'ご予約・ご相談は、<br/>お電話 / Instagram にて' }}></h2>
+        <h2 className="section-title inquiry__title" dangerouslySetInnerHTML={{ __html: title || 'ご予約・ご相談は、<br/>お電話 / Instagram にて' }}></h2>
         <p className="section-lede">
           {lede || 'お電話、または公式Instagramのダイレクトメッセージにて承ります。営業時間内にスタッフが丁寧にご対応いたします。'}
         </p>

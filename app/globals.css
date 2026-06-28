@@ -216,9 +216,9 @@ img { display: block; max-width: 100%; }
   background: var(--ink);
   transition: transform 0.3s, opacity 0.3s;
 }
-.nav__menu-btn.is-open .nav__menu-btn__line:nth-child(1) { transform: translateY(3px) rotate(45deg); }
+.nav__menu-btn.is-open .nav__menu-btn__line:nth-child(1) { transform: translateY(6px) rotate(45deg); }
 .nav__menu-btn.is-open .nav__menu-btn__line:nth-child(2) { opacity: 0; }
-.nav__menu-btn.is-open .nav__menu-btn__line:nth-child(3) { transform: translateY(-3px) rotate(-45deg); }
+.nav__menu-btn.is-open .nav__menu-btn__line:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
 
 .nav__drawer {
   display: none;
@@ -1309,9 +1309,23 @@ body.nav-open { overflow: hidden; }
 }
 
 /* ---------- Price table (料金表ページ) ---------- */
+.price-table-hint {
+  display: none;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  color: var(--gold);
+  text-align: center;
+  margin-bottom: 10px;
+}
 .price-table-wrap {
   border: 1px solid var(--line);
   overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+}
+@media (max-width: 760px) {
+  .price-table-hint { display: block; }
 }
 .price-table {
   width: 100%;
@@ -2421,6 +2435,10 @@ body.nav-open { overflow: hidden; }
   letter-spacing: 0.04em;
 }
 .cta-band__title em { color: var(--gold); font-style: normal; }
+.br-sp { display: none; }
+@media (max-width: 760px) {
+  .br-sp { display: inline; }
+}
 .cta-band__sub {
   color: var(--ink-soft);
   font-size: 15px;
@@ -3180,4 +3198,59 @@ body.nav-open { overflow: hidden; }
   .nav__inner { padding: 14px 20px; }
   /* Drop the "お問い合わせ" label so the phone number isn't clipped */
   .util-bar__right span:first-child { display: none; }
+}
+
+/* スマホ時：各セクションの上下余白を詰める */
+@media (max-width: 760px) {
+  /* ヒーローの実績テキスト（2事業/松竹梅/自社施工）はスマホでは非表示 */
+  .hero__stats { display: none; }
+  /* ヒーロー背景画像：スマホでは縦長画像を全面表示（上のテキストは縦グラデで保護） */
+  .hero {
+    background-image:
+      linear-gradient(to bottom, rgba(251, 249, 244, 0.92) 0%, rgba(251, 249, 244, 0.78) 36%, rgba(251, 249, 244, 0.4) 62%, rgba(251, 249, 244, 0.12) 100%),
+      url('/assets/hero-bg-sp.png');
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+  }
+  .section { padding-top: 52px; padding-bottom: 52px; }
+  .concept { padding-top: 52px; padding-bottom: 52px; }
+  .cta-band { padding-top: 60px; padding-bottom: 60px; }
+  /* プランカード（松竹梅）：スマホでは各要素の上下間隔を詰める */
+  .plan-card { padding: 28px 24px 24px; }
+  /* スマホでは「梅」の右にクイック＋キャッチを横並び配置 */
+  .plan-card__head {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+  .plan-card__char-wrap { flex-shrink: 0; text-align: center; }
+  .plan-card__head-body { flex: 1; min-width: 0; }
+  .plan-card__char { font-size: 58px; line-height: 1; margin: 0 0 2px; }
+  .plan-card__romaji { margin-bottom: 0; }
+  .plan-card__name { margin: 0 0 3px; }
+  .plan-card__tagline { margin-top: 0; margin-bottom: 0; min-height: 0; line-height: 1.6; }
+  .plan-card__price { padding-top: 16px; margin-bottom: 14px; }
+  .plan-card__duration { margin-bottom: 14px; }
+  .plan-card__features { margin: 0 0 18px; }
+  .plan-card__features li { padding: 7px 0; }
+  /* スマホ時に1行固定したい見出し（画面幅に応じて縮小） */
+  .heading-1line-sp { white-space: nowrap; font-size: min(30px, 7vw); }
+  /* お問い合わせ見出し：横文字を含む行も1行に収める（やや小さめに縮小） */
+  .inquiry__title { white-space: nowrap; font-size: min(30px, 7vw); }
+  /* ディテイリングのヒーロー見出し：各行を割らず1行ずつ収める */
+  .page-hero--detailing .page-hero__title {
+    white-space: nowrap;
+    font-size: min(30px, 7vw);
+    line-height: 1.4;
+  }
+  /* 日本語テキストを文節単位で改行し、単語の途中での不自然な折り返しを防ぐ */
+  .section-title, .page-hero__title, .hero__title, .concept__title,
+  .cta-band__title, .section-lede, .page-hero__lede, .hero__lede,
+  .cta-band__sub, .service-tile__title, .service-tile__desc,
+  .triad-tile__name, .triad-tile__desc, .plan-card__name, .plan-card__tagline,
+  .process__step__title, .crosslink__title, .crosslink__desc, .faq__q {
+    word-break: auto-phrase;
+  }
 }
