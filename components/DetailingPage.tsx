@@ -15,13 +15,6 @@ export default function DetailingPage() {
 
   const detailFaqs = DETAILING_FAQS;
 
-  const works = [
-    { car: 'Lexus LX600', tier: 'PREMIUM', months: '所有3年 / 屋外駐車' },
-    { car: 'Porsche 911 (992)', tier: 'PREMIUM', months: '所有1年 / 海沿い保管' },
-    { car: 'Mercedes-Benz S500', tier: 'STANDARD', months: '所有5年 / 法人車両' },
-    { car: 'Toyota Alphard', tier: 'STANDARD', months: '所有2年 / ファミリー使用' },
-  ];
-
   return (
     <>
       <UtilBar />
@@ -41,7 +34,7 @@ export default function DetailingPage() {
               <div className="eyebrow">CAR DETAILING · カーディテイリング</div>
               <h1 className="page-hero__title page-hero__title--nowrap">
                 豊見城の<em>カーディテイリング</em><br/>
-                洗車・車磨き・車内清掃。<br/>
+                洗車・車磨き・車内清掃<br/>
                 ¥5,000〜
               </h1>
               <p className="page-hero__lede">
@@ -59,40 +52,51 @@ export default function DetailingPage() {
         </div>
       </section>
 
-      {/* Detailing menu */}
-      <section className="dt-menu" id="menu">
+      {/* Detailing menu — 松竹梅プラン (機能リスト付き) */}
+      <section className="plans" id="menu">
         <div className="section">
-          <div className="eyebrow">MENU · ディテイリングメニュー</div>
-          <h2 className="section-title">豊見城のカーディテイリング、<br/>三つの<em>コース。</em></h2>
-          <p className="section-lede">
-            「日常のメンテナンス洗車」「車磨き・徹底車内清掃」「新車の輝きを取り戻す本格コーティング」—
-            お車の状態とご要望に合わせて、最適なカーディテイリングコースをお選びいただけます。
-          </p>
-          <div className="dt-menu__grid">
-            {data.detailingMenu.map((m) => (
-              <div key={m.key} className={`dt-menu__card ${m.featured ? 'dt-menu__card--featured' : ''} ${m.premium ? 'dt-menu__card--premium' : ''}`}>
-                {m.featured && <div className="plan-card__ribbon">人気No.1</div>}
-                {m.premium && <div className="plan-card__ribbon plan-card__ribbon--premium">Premium</div>}
-                <div className="dt-menu__card__tier">{m.tier} · 松竹梅「{m.ref}」</div>
-                <h3 className="dt-menu__card__name">{m.name}</h3>
-                <div className="dt-menu__card__row">
-                  <span className="dt-menu__card__duration">所要 · {m.duration}</span>
-                  <span className="dt-menu__card__price">
-                    <span className="dt-menu__card__price__yen">¥</span>
-                    {m.price.toLocaleString()}
-                    <span className="dt-menu__card__price__unit">{m.priceNote}</span>
-                  </span>
+          <div className="plans__header">
+            <div>
+              <div className="eyebrow">MENU · 松竹梅コース</div>
+              <h2 className="section-title">豊見城のカーディテイリング、<br/>三つの<em>コース</em></h2>
+            </div>
+          </div>
+
+          <div className="plans__grid">
+            {data.plans.map((p) => (
+              <div
+                key={p.key}
+                className={`plan-card ${p.featured ? 'plan-card--featured' : ''} ${p.premium ? 'plan-card--premium' : ''}`}
+              >
+                {p.featured && <div className="plan-card__ribbon">人気No.1</div>}
+                {p.premium && <div className="plan-card__ribbon plan-card__ribbon--premium">Premium</div>}
+                <div className="plan-card__char">{p.char}</div>
+                <div className="plan-card__romaji">{p.romaji}</div>
+                <h3 className="plan-card__name">{p.name}</h3>
+                <p className="plan-card__tagline">{p.tagline}</p>
+                <div className="plan-card__price">
+                  <span className="plan-card__price__yen">¥</span>
+                  <span className="plan-card__price__total">{p.price.toLocaleString()}</span>
+                  <span className="plan-card__price__suffix">{p.priceNote}</span>
                 </div>
-                <a className={`btn ${m.featured || m.premium ? 'btn--gold' : 'btn--ghost'} plan-card__cta`} href="#inquiry">
+                <div className="plan-card__duration">所要 {p.duration}</div>
+                <ul className="plan-card__features">
+                  {p.features.map((f, i) => (
+                    <li key={i} className={f.ok ? '' : 'is-off'}>
+                      {f.ok
+                        ? <span className="plan-card__check">✓</span>
+                        : <span className="plan-card__cross">—</span>}
+                      <span>{f.text}</span>
+                    </li>
+                  ))}
+                </ul>
+                <a className={`btn ${p.featured || p.premium ? 'btn--gold' : 'btn--ghost'} plan-card__cta`} href="#inquiry">
                   このコースで問い合わせる <span className="btn__arrow">→</span>
                 </a>
               </div>
             ))}
           </div>
-          <p className="plans__note" style={{ marginTop: 24, lineHeight: 1.8 }}>
-            ※ ディテイリング単独依頼の料金です。那覇空港のパーキングと併せてご利用の場合は、同価格でパーキング(¥1,000/日)を別途加算いたします。SUV・大型車・輸入車は別途お見積もり。
-          </p>
-          <p className="plans__note">※ 料金は普通車基準・税込。SUV・大型車は +20%、輸入車は +30% にて承ります。</p>
+          <p className="plans__note">※ 料金は普通車基準・税込。SUV・大型車は +20%、輸入車は +30% にて承ります。那覇空港のパーキングと併せてご利用の場合は、別途パーキング ¥1,000/日を加算いたします。</p>
         </div>
       </section>
 
@@ -100,7 +104,7 @@ export default function DetailingPage() {
       <section className="process">
         <div className="section">
           <div className="eyebrow">PROCESS · 7つの工程</div>
-          <h2 className="section-title">一台一台、<em>丁寧に向き合う。</em></h2>
+          <h2 className="section-title">一台一台、<em>丁寧に向き合う</em></h2>
           <p className="section-lede">
             プレミア・ディテイリングは下地処理から仕上げまで合計12時間以上を要する工程です。
             一台ごとに最適な手順を組み立て、最高の状態に仕上げます。
@@ -121,29 +125,12 @@ export default function DetailingPage() {
       <section className="beforeafter">
         <div className="section">
           <div className="eyebrow">WORKS · 施工事例</div>
-          <h2 className="section-title">磨く前と、<br/>磨いた<em>後と。</em></h2>
+          <h2 className="section-title">磨く前と、磨いた<em>後と</em></h2>
           <p className="section-lede">
-            施工後の艶・透明感をご覧ください。実車のお写真は、ご納車前にお客様にお送りいたします。
+            施工後の艶・透明感をご覧ください。手洗い洗車・磨き・コーティングによるビフォーアフターの一部をご紹介します。
           </p>
-          <div className="beforeafter__grid">
-            {works.map((w, i) => (
-              <div className="beforeafter__pair" key={i}>
-                <div className="beforeafter__half beforeafter__half--before">
-                  <div className="beforeafter__half__bg"></div>
-                  <span className="beforeafter__half__label">BEFORE</span>
-                  <span className="beforeafter__half__hint">[ 実写差替 ]</span>
-                </div>
-                <div className="beforeafter__half beforeafter__half--after">
-                  <div className="beforeafter__half__bg"></div>
-                  <span className="beforeafter__half__label">AFTER</span>
-                  <span className="beforeafter__half__hint">[ 実写差替 ]</span>
-                </div>
-                <div className="beforeafter__caption">
-                  <strong>{w.car}</strong>
-                  <span>{w.tier} · {w.months}</span>
-                </div>
-              </div>
-            ))}
+          <div className="beforeafter__image">
+            <img src="/assets/works.png" alt="カーディテイリング施工事例 ビフォーアフター：スズキ ソリオ、ホンダ N-BOX、BMW 7シリーズ、ホンダ シビックの磨き・コーティング前後比較" />
           </div>
         </div>
       </section>
@@ -193,7 +180,7 @@ export default function DetailingPage() {
       <section className="faq" id="faq">
         <div className="section section--narrow">
           <div className="eyebrow">FAQ · ディテイリング Q&amp;A</div>
-          <h2 className="section-title">ディテイリングについて。</h2>
+          <h2 className="section-title">ディテイリングについて</h2>
           <div style={{ height: 32 }}></div>
           <div className="faq__list">
             {detailFaqs.map((f, i) => (
@@ -211,16 +198,17 @@ export default function DetailingPage() {
       </section>
 
       <CtaBand
-        title="愛車を、<em>本来の姿へ。</em>"
+        title="愛車を、<em>本来の姿へ</em>"
         sub="ディテイリング単独のご依頼も承ります。お電話・公式Instagramにてお気軽にご相談ください。"
         primaryLabel="Instagramへ"
         primaryHref={data.company.instagram}
         primaryExternal
+        bgImage="/assets/cta-detailing.png"
       />
       <InquirySection
         defaultSubject="detailing"
         eyebrow="INQUIRY · お問い合わせ"
-        title="ディテイリングのご相談は<br/>こちらから。"
+        title="ディテイリングのご相談は<br/>こちらから"
         lede="お車の状態・ご予算・ご希望の仕上がりなど、どのようなご相談でも職人が丁寧にヒアリングいたします。"
       />
       <Footer />

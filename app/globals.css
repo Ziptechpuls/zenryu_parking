@@ -417,21 +417,25 @@ body.nav-open { overflow: hidden; }
   min-height: 760px;
   padding: 100px 40px 120px;
   overflow: hidden;
-  background:
-    radial-gradient(ellipse at top right, rgba(201, 164, 73, 0.06) 0%, transparent 50%),
-    var(--bg);
+  background-color: var(--bg);
+  background-image:
+    linear-gradient(to right, rgba(251, 249, 244, 0.97) 0%, rgba(251, 249, 244, 0.9) 32%, rgba(251, 249, 244, 0.6) 58%, rgba(251, 249, 244, 0.3) 82%, rgba(251, 249, 244, 0.15) 100%),
+    url('/assets/hero-bg.png');
+  background-size: cover;
+  background-position: center right;
+  background-repeat: no-repeat;
 }
 .hero__inner {
   max-width: 1280px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1.05fr 1fr;
+  grid-template-columns: 1fr;
   gap: 80px;
   align-items: center;
   position: relative;
   z-index: 2;
 }
-.hero__copy { position: relative; }
+.hero__copy { position: relative; max-width: 820px; }
 .hero__kicker {
   display: inline-flex;
   align-items: center;
@@ -1302,6 +1306,57 @@ body.nav-open { overflow: hidden; }
   text-align: center;
   font-family: var(--mono);
   letter-spacing: 0.12em;
+}
+
+/* ---------- Price table (料金表ページ) ---------- */
+.price-table-wrap {
+  border: 1px solid var(--line);
+  overflow-x: auto;
+}
+.price-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--bg-card);
+  min-width: 560px;
+}
+.price-table thead th {
+  background: var(--ink);
+  color: var(--bg);
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: 15px;
+  letter-spacing: 0.08em;
+  padding: 18px 20px;
+  text-align: center;
+}
+.price-table td {
+  padding: 22px 20px;
+  border-top: 1px solid var(--line);
+  vertical-align: middle;
+}
+.price-table tbody tr:nth-child(even) {
+  background: var(--bg-soft);
+}
+.price-table__days {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 17px;
+  text-align: center;
+  white-space: nowrap;
+  color: var(--ink);
+}
+.price-table__price {
+  font-family: var(--serif);
+  font-weight: 700;
+  font-size: 21px;
+  color: var(--gold);
+  text-align: center;
+  white-space: nowrap;
+}
+.price-table__note {
+  font-size: 13px;
+  line-height: 1.7;
+  color: var(--ink-soft);
 }
 
 /* ---------- Detailing showcase ---------- */
@@ -2810,6 +2865,16 @@ body.nav-open { overflow: hidden; }
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 32px;
+}
+.beforeafter__image {
+  border: 1px solid var(--line);
+  background: var(--bg-card);
+  overflow: hidden;
+}
+.beforeafter__image img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 .beforeafter__pair {
   display: grid;

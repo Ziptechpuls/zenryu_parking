@@ -48,7 +48,7 @@ export default function HomePage() {
               那覇空港 パーキング × カーディテイリング
             </div>
             <h1 className="hero__title">
-              預ける間に、<br/><em>磨かれる。</em>
+              預ける間に、<br/><em>磨かれる</em>
             </h1>
             <p className="hero__lede">
               ゼンリュウの2つの事業は、<strong>空港パーキング</strong>と<strong>カーディテイリング</strong>。
@@ -73,12 +73,6 @@ export default function HomePage() {
               </div>
             </div>
           </div>
-
-          <div className="hero__visual">
-            <div className="hero__photo">
-              <img className="hero__photo__img" src="/assets/hero_section.png" alt="預けるあいだに、磨かれる。那覇空港 パーキング × カーディテイリング" />
-            </div>
-          </div>
         </div>
       </section>
 
@@ -89,7 +83,7 @@ export default function HomePage() {
         <div className="concept__inner">
           <div className="eyebrow">CONCEPT · 私たちの発想</div>
           <h2 className="concept__title">
-            駐車している時間を、<br/><em>車の価値が上がる時間へ。</em>
+            駐車している時間を、<br/><em>車の価値が上がる時間へ</em>
           </h2>
           <div className="concept__image">
             <img src="/assets/concept.png" alt="出（ご旅行・ご出張へ）→ 磨（駐車中に洗車・磨き・コーティングを施工）→ 帰（整えられたお車でお出迎え）" />
@@ -101,7 +95,7 @@ export default function HomePage() {
       <section className="triad" id="services">
         <div className="section">
           <div className="eyebrow">SERVICES · 2つの事業</div>
-          <h2 className="section-title">ゼンリュウの2つの柱。</h2>
+          <h2 className="section-title">ゼンリュウの2つの柱</h2>
           <p className="section-lede">
             「空港パーキング」と「カーディテイリング」。お預かりした駐車時間がそのまま施工時間になる——2つの事業が組み合わさることで、停めるだけで愛車が磨き上がります。
           </p>
@@ -162,7 +156,7 @@ export default function HomePage() {
       <section className="access" id="access">
         <div className="section">
           <div className="eyebrow">ACCESS · アクセス</div>
-          <h2 className="section-title">アクセス・店舗情報。</h2>
+          <h2 className="section-title">アクセス・店舗情報</h2>
           <p className="section-lede">
             ゼンリュウの営業所は沖縄県豊見城市にございます。パーキングのお預かり・お引き渡しは那覇空港にて承ります。
           </p>
@@ -204,7 +198,7 @@ export default function HomePage() {
       <section className="company" id="company">
         <div className="section">
           <div className="eyebrow">COMPANY · 会社概要</div>
-          <h2 className="section-title">私たちについて。</h2>
+          <h2 className="section-title">私たちについて</h2>
           <div style={{ height: 32 }}></div>
           <div className="company__layout">
             <div className="company__visual">
@@ -232,7 +226,7 @@ export default function HomePage() {
       <section className="faq" id="faq">
         <div className="section section--narrow">
           <div className="eyebrow">FAQ · よくあるご質問</div>
-          <h2 className="section-title">ご利用の前に。</h2>
+          <h2 className="section-title">ご利用の前に</h2>
           <div style={{ height: 32 }}></div>
           <div className="faq__list">
             {data.faqs.map((f, i) => (
@@ -252,12 +246,12 @@ export default function HomePage() {
       <InquirySection
         defaultSubject="parking"
         eyebrow="INQUIRY · お問い合わせ"
-        title="ご予約・ご相談は、<br/>お電話 / Instagram にて。"
+        title="ご予約・ご相談は、<br/>お電話 / Instagram にて"
         lede="パーキング・カーディテイリング、いずれのお問い合わせも下記より承ります。営業時間内にスタッフがご対応いたします。"
       />
 
       <CtaBand
-        title="愛車のことは、<em>ゼンリュウ</em>へ。"
+        title="愛車のことは、<em>ゼンリュウ</em>へ"
         sub="ご予約・ご相談はお電話、または公式Instagramのダイレクトメッセージにて承ります。"
         primaryLabel="Instagramへ"
         primaryHref={c.instagram}

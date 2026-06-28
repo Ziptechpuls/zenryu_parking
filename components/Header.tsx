@@ -29,6 +29,7 @@ export function Header({ current }: { current?: string }) {
           <nav className="nav__links">
             {link('home', '/', 'ホーム')}
             {link('parking', '/parking', 'パーキング')}
+            {link('pricing', '/pricing', '料金表')}
             {link('detailing', '/detailing', 'ディテイリング')}
             <Link href="/#access">アクセス</Link>
             <Link href="/#company">会社概要</Link>
@@ -52,6 +53,7 @@ export function Header({ current }: { current?: string }) {
       <aside className={`nav__drawer ${menuOpen ? 'is-open' : ''}`}>
         <Link href="/" onClick={close}>ホーム</Link>
         <Link href="/parking" onClick={close}>パーキング</Link>
+        <Link href="/pricing" onClick={close}>料金表</Link>
         <Link href="/detailing" onClick={close}>ディテイリング</Link>
         <Link href="/#company" onClick={close}>会社概要</Link>
         <Link href="/#access" onClick={close}>アクセス</Link>

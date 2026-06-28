@@ -3,7 +3,6 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { ZENRYU_DATA } from '@/lib/data';
-import { smoothScrollTo } from '@/lib/utils';
 import { UtilBar } from './UtilBar';
 import { Header } from './Header';
 import { TrustStrip } from './TrustStrip';
@@ -14,12 +13,6 @@ import { InquirySection } from './InquirySection';
 export default function ParkingPage() {
   const data = ZENRYU_DATA;
   const [openFaq, setOpenFaq] = useState(0);
-  const [selectedPlan, setSelectedPlan] = useState('take');
-
-  const pickPlanAndInquire = (key: string) => {
-    setSelectedPlan(key);
-    setTimeout(() => smoothScrollTo('inquiry'), 50);
-  };
 
   return (
     <>
@@ -37,8 +30,8 @@ export default function ParkingPage() {
           <div className="page-hero__layout">
             <div>
               <div className="eyebrow">CAR CARE &amp; PARKING</div>
-              <h1 className="page-hero__title">
-                那覇空港<em>パーキング</em><br/>預ける間に、磨かれる。
+              <h1 className="page-hero__title page-hero__title--nowrap">
+                那覇空港<em>パーキング</em><br/>預ける間に磨かれる
               </h1>
               <p className="page-hero__lede">
                 那覇空港パーキングをお探しの方へ。ご旅行・ご出張のあいだ、那覇空港のすぐそばで愛車をお預かりします。駐車料金は1日¥1,000、空港まで送迎付き。お預かり中に手洗い洗車・コーティングまで施工するカーケアコース (松竹梅) もご利用いただけます。
@@ -62,7 +55,7 @@ export default function ParkingPage() {
         <div className="concept__inner">
           <div className="eyebrow">CONCEPT · 私たちの発想</div>
           <h2 className="concept__title">
-            駐車している時間を、<br/><em>車の価値が上がる時間へ。</em>
+            駐車している時間を、<br/><em>車の価値が上がる時間へ</em>
           </h2>
           <div className="concept__image">
             <img src="/assets/concept.png" alt="出（ご旅行・ご出張へ）→ 磨（駐車中に洗車・磨き・コーティングを施工）→ 帰（整えられたお車でお出迎え）" />
@@ -74,59 +67,59 @@ export default function ParkingPage() {
       <section className="services">
         <div className="section">
           <div className="eyebrow">WHY · 選ばれる理由</div>
-          <h2 className="section-title">那覇空港パーキングで、選ばれる4つの理由。</h2>
+          <h2 className="section-title">那覇空港パーキングで、選ばれる4つの理由</h2>
           <p className="section-lede">
             ご旅行中・ご出張中の不安をすべて取り除く、ゼンリュウの那覇空港パーキング。駐車場の予約から空港送迎、お預かり中のカーケアまで一貫して承ります。
           </p>
           <div className="services__grid">
             <div className="service-tile">
               <div className="service-tile__num">01</div>
-              <div className="service-tile__icon">空</div>
-              <h3 className="service-tile__title">那覇空港まで送迎付き</h3>
+              <div className="service-tile__icon">近</div>
+              <h3 className="service-tile__title">那覇空港から車ですぐの好立地</h3>
               <p className="service-tile__desc">
-                ご出発便・ご帰着便に合わせて、那覇空港のターミナルまで送迎いたします。カーケアプランをご利用のお客様はプラン料金に含まれております。
+                那覇空港のすぐ近く。空港との往復が短時間で済むため、お車のお預かりからご出発、ご帰着後の送迎までスムーズに行えます。
               </p>
               <ul className="service-tile__list">
+                <li>那覇空港まで送迎付き</li>
                 <li>国内線・国際線ターミナル対応</li>
-                <li>大型荷物・ベビーカー対応</li>
-                <li>営業時間内に運行</li>
+                <li>出発前後の移動が短時間</li>
               </ul>
             </div>
             <div className="service-tile">
               <div className="service-tile__num">02</div>
-              <div className="service-tile__icon">磨</div>
-              <h3 className="service-tile__title">預けた時間で職人が施工</h3>
+              <div className="service-tile__icon">道</div>
+              <h3 className="service-tile__title">名嘉地ICを降りてすぐ</h3>
               <p className="service-tile__desc">
-                ご旅行・ご出張のあいだに、職人が手洗い洗車・水垢落とし・コーティングを丁寧に施工いたします。ご帰着時には、整えられたお車でお出迎えします。
+                那覇空港自動車道「名嘉地インターチェンジ」を降りてすぐ。お車の持ち込み・引き渡しがスムーズで、遠方からのご利用も道に迷わず安心です。
               </p>
               <ul className="service-tile__list">
-                <li>輸入車・EV車にも対応</li>
-                <li>松プランは3〜4日間で本格仕上げ</li>
-                <li>仕上がり写真をご納車前にお送り</li>
+                <li>名嘉地ICからすぐの好アクセス</li>
+                <li>引き渡し〜送迎までスムーズ</li>
+                <li>遠方・南部エリアからも便利</li>
               </ul>
             </div>
             <div className="service-tile">
               <div className="service-tile__num">03</div>
-              <div className="service-tile__icon">点</div>
-              <h3 className="service-tile__title">お預かり時の点検記録</h3>
+              <div className="service-tile__icon">磨</div>
+              <h3 className="service-tile__title">預けている間に、車を磨くサービス</h3>
               <p className="service-tile__desc">
-                お預かり時にスタッフがお客様立ち会いのもと、外装・車内の状態を記録します。ご返却時のトラブルを防ぎ、安心してお車をお預けいただけます。
+                駐車しているあいだに、職人が手洗い洗車・磨き・コーティング・車内清掃を施工。停めている時間が、そのまま愛車が美しくなる時間になります。
               </p>
               <ul className="service-tile__list">
-                <li>外装の状態を写真記録</li>
-                <li>燃料・走行距離も記録</li>
-                <li>貴重品はお持ち帰り推奨</li>
+                <li>手洗い洗車〜本格コーティング</li>
+                <li>車内清掃にも対応</li>
+                <li>松竹梅の3プランから選べる</li>
               </ul>
             </div>
             <div className="service-tile">
               <div className="service-tile__num">04</div>
               <div className="service-tile__icon">便</div>
-              <h3 className="service-tile__title">電話・Instagramで連絡</h3>
+              <h3 className="service-tile__title">電話・Instagramですぐ連絡</h3>
               <p className="service-tile__desc">
-                ご予約後の便変更・延長など、お電話・Instagramのダイレクトメッセージでご相談を承ります。営業時間内にスタッフが丁寧にご対応いたします。
+                ご予約・空き状況の確認、便変更・延長などは、お電話または公式Instagramのダイレクトメッセージですぐにご相談いただけます。
               </p>
               <ul className="service-tile__list">
-                <li>営業時間内に受付</li>
+                <li>営業時間内にすぐ受付</li>
                 <li>領収書・経費精算もご相談OK</li>
                 <li>法人ご契約も承ります</li>
               </ul>
@@ -135,63 +128,11 @@ export default function ParkingPage() {
         </div>
       </section>
 
-      {/* Plans */}
-      <section className="plans" id="plans">
-        <div className="section">
-          <div className="plans__header">
-            <div>
-              <div className="eyebrow">PRICING · 松竹梅プラン</div>
-              <h2 className="section-title">3つのプランから、<br/>仕上がりをお選びください。</h2>
-            </div>
-          </div>
-
-          <div className="plans__grid">
-            {data.plans.map((p) => (
-              <div
-                key={p.key}
-                className={`plan-card ${p.featured ? 'plan-card--featured' : ''} ${p.premium ? 'plan-card--premium' : ''} ${selectedPlan === p.key ? 'is-selected' : ''}`}
-                onClick={() => setSelectedPlan(p.key)}
-              >
-                {p.featured && <div className="plan-card__ribbon">人気No.1</div>}
-                {p.premium && <div className="plan-card__ribbon plan-card__ribbon--premium">Premium</div>}
-                <div className="plan-card__char">{p.char}</div>
-                <div className="plan-card__romaji">{p.romaji}</div>
-                <h3 className="plan-card__name">{p.name}</h3>
-                <p className="plan-card__tagline">{p.tagline}</p>
-                <div className="plan-card__price">
-                  <span className="plan-card__price__yen">¥</span>
-                  <span className="plan-card__price__total">{p.price.toLocaleString()}</span>
-                  <span className="plan-card__price__suffix">{p.priceNote}</span>
-                </div>
-                <div className="plan-card__duration">所要 {p.duration}<span style={{ color: 'var(--ink-mute)', marginLeft: 8 }}>+ パーキング ¥1,000/日</span></div>
-                <ul className="plan-card__features">
-                  {p.features.map((f, i) => (
-                    <li key={i} className={f.ok ? '' : 'is-off'}>
-                      {f.ok
-                        ? <span className="plan-card__check">✓</span>
-                        : <span className="plan-card__cross">—</span>}
-                      <span>{f.text}</span>
-                    </li>
-                  ))}
-                </ul>
-                <button
-                  className={`btn ${p.featured || p.premium ? 'btn--gold' : 'btn--ghost'} plan-card__cta`}
-                  onClick={(e) => { e.stopPropagation(); pickPlanAndInquire(p.key); }}
-                >
-                  このプランで問い合わせる <span className="btn__arrow">→</span>
-                </button>
-              </div>
-            ))}
-          </div>
-          <p className="plans__note">※ パーキング料金 (¥1,000/日) は別途加算となります。例: 3泊4日で竹コースご利用 = ¥1,000×4日 + ¥15,000 = ¥19,000。SUV・大型車・輸入車は別途お見積もり。</p>
-        </div>
-      </section>
-
       {/* Flow */}
       <section className="how">
         <div className="section">
           <div className="eyebrow">FLOW · ご利用の流れ</div>
-          <h2 className="section-title">ご予約からお引き渡しまで。</h2>
+          <h2 className="section-title">ご予約からお引き渡しまで</h2>
           <p className="section-lede">
             お預かり時のご対面確認から、ご帰着便に合わせたお引き渡しまで、スタッフが一貫して担当いたします。
           </p>
@@ -212,9 +153,8 @@ export default function ParkingPage() {
 
       <InquirySection
         defaultSubject="parking"
-        defaultPlan={selectedPlan}
         eyebrow="INQUIRY · ご予約・お問い合わせ"
-        title="ご予約・ご相談は、<br/>お電話 / Instagram にて。"
+        title="ご予約・ご相談は、<br/>お電話 / Instagram にて"
         lede="お電話、または公式Instagramのダイレクトメッセージにて承ります。空き状況もお気軽にお問い合わせください。"
       />
 
@@ -241,7 +181,7 @@ export default function ParkingPage() {
       <section className="faq" id="faq">
         <div className="section section--narrow">
           <div className="eyebrow">FAQ · よくあるご質問</div>
-          <h2 className="section-title">カーケア・パーキングについて。</h2>
+          <h2 className="section-title">カーケア・パーキングについて</h2>
           <div style={{ height: 32 }}></div>
           <div className="faq__list">
             {data.faqs.map((f, i) => (
@@ -259,7 +199,7 @@ export default function ParkingPage() {
       </section>
 
       <CtaBand
-        title="愛車のことは、<em>ゼンリュウ</em>へ。"
+        title="愛車のことは、<em>ゼンリュウ</em>へ"
         sub="ご予約・ご相談はお電話、または公式Instagramのダイレクトメッセージにて承ります。初めてのお客様も、スタッフが丁寧にご案内いたします。"
         primaryLabel="Instagramへ"
         primaryHref={data.company.instagram}
