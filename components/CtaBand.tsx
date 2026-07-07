@@ -31,7 +31,7 @@ export function CtaBand({ title, sub, primaryLabel, primaryHref, primaryExternal
         <div style={{ display: 'flex', gap: 14, flexDirection: 'column' }}>
           <a className="btn btn--gold btn--lg" href={`tel:${c.phone.replace(/-/g, '')}`} style={{ justifyContent: 'center' }}>電話する <span className="btn__arrow">→</span></a>
           <a
-            className="btn btn--ghost btn--lg"
+            className="btn btn--gold btn--lg"
             href={primaryHref}
             style={{ justifyContent: 'center' }}
             {...(primaryExternal ? { target: '_blank', rel: 'noopener' } : {})}
