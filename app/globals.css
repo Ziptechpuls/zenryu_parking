@@ -3311,8 +3311,11 @@ body.nav-open { overflow: hidden; }
     background-position: center 80%;
     background-repeat: no-repeat;
   }
+  /* ヒーロー：アイブロウ・タイトル・説明文まわりの上下余白を詰める */
+  .hero__kicker { margin-bottom: 18px; }
+  .hero__title { margin-bottom: 18px; }
   /* ヒーロー説明文：スマホでは行間を詰める */
-  .hero__lede { line-height: 1.7; margin-bottom: 32px; }
+  .hero__lede { line-height: 1.7; margin-bottom: 28px; }
   .section { padding-top: 40px; padding-bottom: 40px; }
   .concept { padding-top: 40px; padding-bottom: 40px; }
   .cta-band { padding-top: 44px; padding-bottom: 44px; }
