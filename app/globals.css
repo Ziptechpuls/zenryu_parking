@@ -3288,8 +3288,8 @@ body.nav-open { overflow: hidden; }
   .page-hero__meta__row { grid-template-columns: 88px 1fr; gap: 12px; }
 
   /* Trust strip: single column to avoid cramped 2-up */
-  .trust-strip__inner { grid-template-columns: 1fr; gap: 18px; }
-  .trust-strip__item, .trust-strip__item:nth-child(2) { border-right: none; padding-right: 0; }
+  .trust-strip__inner { grid-template-columns: repeat(2, 1fr); gap: 24px 14px; }
+  .trust-strip__item { border-right: none; padding-right: 0; gap: 12px; }
 
   /* Utility bar / nav: trim oversized side padding on phones */
   .util-bar__inner { padding: 8px 20px; gap: 12px; font-size: 10px; }
