@@ -177,7 +177,7 @@ export default function HomePage() {
                 <dd><strong>那覇空港 国内線・国際線対応</strong>パーキングご利用のお客様</dd>
                 <dt>Instagram</dt>
                 <dd>
-                  <a href={c.instagram} target="_blank" rel="noopener" style={{ color: 'var(--gold)' }}>@zenryurentacar</a>
+                  <a href={c.instagram} target="_blank" rel="noopener" style={{ color: 'var(--gold)' }}>@zenryu_p</a>
                 </dd>
               </dl>
             </div>
@@ -215,7 +215,7 @@ export default function HomePage() {
                   <tr><th>電話</th><td>{c.phone}</td></tr>
                   <tr><th>営業時間</th><td>{c.hours}</td></tr>
                   <tr><th>事業内容</th><td>① 空港パーキング事業<br/>② カーディテイリング事業</td></tr>
-                  <tr><th>Instagram</th><td><a href={c.instagram} target="_blank" rel="noopener" style={{ color: 'var(--gold)' }}>@zenryurentacar</a></td></tr>
+                  <tr><th>Instagram</th><td><a href={c.instagram} target="_blank" rel="noopener" style={{ color: 'var(--gold)' }}>@zenryu_p</a></td></tr>
                 </tbody>
               </table>
             </div>

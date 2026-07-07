@@ -104,7 +104,7 @@ export const ZENRYU_DATA: ZenryuData = {
     address: '〒901-0231 沖縄県豊見城市我那覇 152番地8',
     phone: '098-995-9805',
     hours: '9:00 〜 21:00',
-    instagram: 'https://www.instagram.com/zenryurentacar/',
+    instagram: 'https://www.instagram.com/zenryu_p',
   },
 
   /* カーケアコース 松竹梅 — 固定料金 (パーキングは別途加算) */

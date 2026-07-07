@@ -15,7 +15,7 @@ function InquiryChannels() {
       </div>
       <div className="inquiry__channel">
         <div className="inquiry__channel__label">INSTAGRAM · 公式アカウント</div>
-        <div className="inquiry__channel__value" style={{ fontSize: 20 }}><a href={c.instagram} target="_blank" rel="noopener">@zenryurentacar</a></div>
+        <div className="inquiry__channel__value" style={{ fontSize: 20 }}><a href={c.instagram} target="_blank" rel="noopener">@zenryu_p</a></div>
         <div className="inquiry__channel__hours">DM受付中</div>
         <p className="inquiry__channel__desc">施工事例の最新情報を発信中。DMからもお気軽にお問い合わせください。</p>
       </div>
