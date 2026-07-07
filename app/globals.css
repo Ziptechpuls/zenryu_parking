@@ -3322,6 +3322,13 @@ body.nav-open { overflow: hidden; }
   .section-gap { height: 16px; }
   /* 会社概要：縦積み時のモット文まわりの余白を詰める */
   .company__layout { gap: 24px; }
+  /* 2つの事業タイル：スマホでは上下パディングと内部余白を詰める */
+  .triad-tile { padding: 32px 24px 32px; }
+  .triad-tile__num { margin-bottom: 12px; }
+  .triad-tile__name { margin-bottom: 8px; }
+  .triad-tile__en { margin-bottom: 14px; }
+  .triad-tile__desc { margin-bottom: 18px; flex: none; }
+  .triad-tile__price { margin-bottom: 16px; }
   /* ヒーロー上部の余白とパンくず下の余白を詰める */
   .page-hero { padding-top: 30px; }
   .page-hero__breadcrumb { margin-bottom: 14px; }
