@@ -376,6 +376,8 @@ body.nav-open { overflow: hidden; }
   margin: 0 auto;
 }
 .section--narrow { max-width: 980px; }
+/* 見出しと後続コンテンツの間のスペーサー (可変) */
+.section-gap { height: 32px; }
 .eyebrow {
   display: inline-flex;
   align-items: center;
@@ -3243,7 +3245,7 @@ body.nav-open { overflow: hidden; }
   .access__info { padding: 32px 28px; }
   .access__info dl { grid-template-columns: 1fr; gap: 8px 0; }
   .access__info dd { padding-bottom: 16px; }
-  .company__visual { position: static; margin-bottom: 32px; }
+  .company__visual { position: static; margin-bottom: 0; }
   .company__seal { width: 140px; height: 140px; }
   .company__seal__char { font-size: 64px; }
   .company__motto { font-size: 16px; line-height: 1.85; }
@@ -3317,6 +3319,9 @@ body.nav-open { overflow: hidden; }
   /* 見出し下のリード文の余白を詰める（後続コンテンツとの間延び解消） */
   .section-lede { margin-bottom: 32px; }
   .section-title { margin-bottom: 20px; }
+  .section-gap { height: 16px; }
+  /* 会社概要：縦積み時のモット文まわりの余白を詰める */
+  .company__layout { gap: 24px; }
   /* ヒーロー上部の余白とパンくず下の余白を詰める */
   .page-hero { padding-top: 30px; }
   .page-hero__breadcrumb { margin-bottom: 14px; }

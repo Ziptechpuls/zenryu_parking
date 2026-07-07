@@ -178,7 +178,7 @@ export default function DetailingPage() {
           <div className="section">
             <div className="eyebrow">ARTISAN · 職人紹介</div>
             <h2 className="section-title">磨くのは、<br/>塗装ではなく、<em>車の品格。</em></h2>
-            <div style={{ height: 32 }}></div>
+            <div className="section-gap"></div>
             <div className="artisan__layout">
               <div className="artisan__photo">
                 <div className="artisan__photo__label">[ PHOTO · チーフ・ディテイラー ]</div>
@@ -218,7 +218,7 @@ export default function DetailingPage() {
         <div className="section section--narrow">
           <div className="eyebrow">FAQ · ディテイリング Q&amp;A</div>
           <h2 className="section-title">ディテイリングについて</h2>
-          <div style={{ height: 32 }}></div>
+          <div className="section-gap"></div>
           <div className="faq__list">
             {detailFaqs.map((f, i) => (
               <div key={i} className={`faq__item ${openFaq === i ? 'is-open' : ''}`}>

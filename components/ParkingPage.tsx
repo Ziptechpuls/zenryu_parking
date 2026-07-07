@@ -182,7 +182,7 @@ export default function ParkingPage() {
         <div className="section section--narrow">
           <div className="eyebrow">FAQ · よくあるご質問</div>
           <h2 className="section-title">カーケア・パーキングについて</h2>
-          <div style={{ height: 32 }}></div>
+          <div className="section-gap"></div>
           <div className="faq__list">
             {data.faqs.map((f, i) => (
               <div key={i} className={`faq__item ${openFaq === i ? 'is-open' : ''}`}>

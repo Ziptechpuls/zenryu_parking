@@ -200,7 +200,7 @@ export default function HomePage() {
         <div className="section">
           <div className="eyebrow">COMPANY · 会社概要</div>
           <h2 className="section-title">私たちについて</h2>
-          <div style={{ height: 32 }}></div>
+          <div className="section-gap"></div>
           <div className="company__layout">
             <div className="company__visual">
               <div className="company__motto">
@@ -228,7 +228,7 @@ export default function HomePage() {
         <div className="section section--narrow">
           <div className="eyebrow">FAQ · よくあるご質問</div>
           <h2 className="section-title">ご利用の前に</h2>
-          <div style={{ height: 32 }}></div>
+          <div className="section-gap"></div>
           <div className="faq__list">
             {data.faqs.map((f, i) => (
               <div key={i} className={`faq__item ${openFaq === i ? 'is-open' : ''}`}>
