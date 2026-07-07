@@ -3330,6 +3330,15 @@ body.nav-open { overflow: hidden; }
   .section-lede { margin-bottom: 32px; }
   .section-title { margin-bottom: 20px; }
   .section-gap { height: 16px; }
+  /* スマホ：テキストサイズを全体的に一段下げる */
+  .section-title { font-size: clamp(23px, 5.8vw, 29px); }
+  .concept__title { font-size: clamp(22px, 5.4vw, 28px); }
+  .service-tile__title { font-size: 19px; }
+  .triad-tile__name { font-size: 20px; }
+  .service-tile__desc { font-size: 13px; }
+  .triad-tile__desc { font-size: 12.5px; }
+  .section-lede { font-size: 13.5px; }
+  .hero__lede { font-size: 14px; }
   /* 会社概要：縦積み時のモット文まわりの余白を詰める */
   .company__layout { gap: 24px; }
   /* 選ばれる理由カード：スマホでは上下パディングと内部余白を詰める */
