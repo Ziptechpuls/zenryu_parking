@@ -3313,6 +3313,9 @@ body.nav-open { overflow: hidden; }
   .section { padding-top: 40px; padding-bottom: 40px; }
   .concept { padding-top: 40px; padding-bottom: 40px; }
   .cta-band { padding-top: 44px; padding-bottom: 44px; }
+  /* ヒーロー上部の余白とパンくず下の余白を詰める */
+  .page-hero { padding-top: 30px; }
+  .page-hero__breadcrumb { margin-bottom: 14px; }
   /* プランカード（松竹梅）：スマホでは各要素の上下間隔を詰める */
   .plan-card { padding: 28px 24px 24px; }
   /* スマホでは「梅」の右にクイック＋キャッチを横並び配置 */
