@@ -916,7 +916,7 @@ body.nav-open { overflow: hidden; }
 }
 .triad-tile__desc {
   font-size: 13px;
-  color: var(--ink-soft);
+  color: var(--ink);
   line-height: 1.95;
   max-width: 340px;
   margin-bottom: 28px;
