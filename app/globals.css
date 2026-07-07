@@ -3310,9 +3310,9 @@ body.nav-open { overflow: hidden; }
   }
   /* ヒーロー説明文：スマホでは行間を詰める */
   .hero__lede { line-height: 1.7; margin-bottom: 32px; }
-  .section { padding-top: 52px; padding-bottom: 52px; }
-  .concept { padding-top: 52px; padding-bottom: 52px; }
-  .cta-band { padding-top: 60px; padding-bottom: 60px; }
+  .section { padding-top: 40px; padding-bottom: 40px; }
+  .concept { padding-top: 40px; padding-bottom: 40px; }
+  .cta-band { padding-top: 44px; padding-bottom: 44px; }
   /* プランカード（松竹梅）：スマホでは各要素の上下間隔を詰める */
   .plan-card { padding: 28px 24px 24px; }
   /* スマホでは「梅」の右にクイック＋キャッチを横並び配置 */
@@ -3528,7 +3528,7 @@ body.nav-open { overflow: hidden; }
   .blog-card__meta { flex-wrap: wrap; gap: 6px 14px; }
   .blog-card__title { font-size: 18px; line-height: 1.6; }
   .blog-card__excerpt { font-size: 13.5px; }
-  .blog-article-section .section { padding-top: 64px; padding-bottom: 64px; }
+  .blog-article-section .section { padding-top: 44px; padding-bottom: 44px; }
   .blog-article__block { margin-bottom: 36px; }
   .blog-article__p { font-size: 15px; line-height: 2; }
 }
