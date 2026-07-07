@@ -51,8 +51,9 @@ export default function HomePage() {
               預ける間に、<br/><em>磨かれる</em>
             </h1>
             <p className="hero__lede">
-              ゼンリュウの2つの事業は、<strong>空港パーキング</strong>と<strong>カーディテイリング</strong>。
-              ご旅行・ご出張で車を停めているそのあいだに、職人が洗車・磨き・コーティングを施工します。
+              <strong className="hero__marker">出張や観光などで那覇空港をご利用されるお客様のお車をお預かりしております。</strong>
+              受け取りからお引渡しまで一貫して行いますので、安心してご利用いただけます。
+              那覇空港近辺で駐車場をお探しの方は、ぜひゼンリュウまでご連絡ください。
             </p>
             <div className="hero__actions">
               <Link className="btn btn--gold btn--lg" href="/parking">那覇空港パーキングを見る</Link>
@@ -86,7 +87,7 @@ export default function HomePage() {
             駐車している時間を、<br/><em>車の価値が上がる時間へ</em>
           </h2>
           <div className="concept__image">
-            <img src="/assets/concept.png" alt="出（ご旅行・ご出張へ）→ 磨（駐車中に洗車・磨き・コーティングを施工）→ 帰（整えられたお車でお出迎え）" />
+            <img src="/assets/concept.webp" width={1674} height={940} alt="出（ご旅行・ご出張へ）→ 磨（駐車中に洗車・磨き・コーティングを施工）→ 帰（整えられたお車でお出迎え）" />
           </div>
         </div>
       </section>
@@ -256,7 +257,7 @@ export default function HomePage() {
         primaryLabel="Instagramへ"
         primaryHref={c.instagram}
         primaryExternal
-        bgImage="/assets/cta-parking.png"
+        bgImage="/assets/cta-parking.webp"
       />
       <Footer />
     </>

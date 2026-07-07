@@ -1,5 +1,27 @@
 import type { Metadata } from 'next';
+import { Noto_Sans_JP, Noto_Serif_JP, JetBrains_Mono } from 'next/font/google';
 import './globals.css';
+
+const notoSans = Noto_Sans_JP({
+  weight: ['300', '400', '500', '600', '700'],
+  display: 'swap',
+  preload: false,
+  variable: '--font-sans-jp',
+});
+
+const notoSerif = Noto_Serif_JP({
+  weight: ['400', '500', '600', '700'],
+  display: 'swap',
+  preload: false,
+  variable: '--font-serif-jp',
+});
+
+const jetBrainsMono = JetBrains_Mono({
+  weight: ['400', '500'],
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-mono-jb',
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://zenryu-p.jp'),
@@ -14,15 +36,10 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="ja">
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600;700&family=Noto+Serif+JP:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
-          rel="stylesheet"
-        />
-      </head>
+    <html
+      lang="ja"
+      className={`${notoSans.variable} ${notoSerif.variable} ${jetBrainsMono.variable}`}
+    >
       <body>{children}</body>
     </html>
   );

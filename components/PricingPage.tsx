@@ -75,7 +75,7 @@ export default function PricingPage() {
         primaryLabel="Instagramへ"
         primaryHref={data.company.instagram}
         primaryExternal
-        bgImage="/assets/cta-parking.png"
+        bgImage="/assets/cta-parking.webp"
       />
       <Footer />
     </>

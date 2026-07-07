@@ -136,7 +136,38 @@ export default function DetailingPage() {
             施工後の艶・透明感をご覧ください。手洗い洗車・磨き・コーティングによるビフォーアフターの一部をご紹介します。
           </p>
           <div className="beforeafter__image">
-            <img src="/assets/works.png" alt="カーディテイリング施工事例 ビフォーアフター：スズキ ソリオ、ホンダ N-BOX、BMW 7シリーズ、ホンダ シビックの磨き・コーティング前後比較" />
+            <img src="/assets/works.webp" width={1668} height={943} alt="カーディテイリング施工事例 ビフォーアフター：スズキ ソリオ、ホンダ N-BOX、BMW 7シリーズ、ホンダ シビックの磨き・コーティング前後比較" />
+          </div>
+        </div>
+      </section>
+
+      {/* Interior cleaning — 車内清掃 */}
+      <section className="interior">
+        <div className="section">
+          <div className="eyebrow">INTERIOR · 車内清掃</div>
+          <h2 className="section-title">車の外だけでなく、<em>車内も丁寧に</em></h2>
+          <p className="section-lede">
+            ゼンリュウは車内清掃も得意としています。掃除機での吸い上げに加え、水蒸気（スチーム）バキュームでシートやマットの奥に染み込んだ汚れ・ニオイまでしっかり除去。乗り込んだ瞬間に気持ちのいい、清潔な車内へ仕上げます。
+          </p>
+          <div className="interior__grid">
+            <figure className="interior__item">
+              <div className="interior__image">
+                <img src="/assets/interior-vacuum.webp" width={1536} height={1024} alt="車内を掃除機で吸い上げる様子。シートやコンソール周りのホコリ・砂を丁寧に除去します" />
+              </div>
+              <figcaption className="interior__caption">
+                <strong>掃除機で吸い上げ</strong>
+                シート・フロア・コンソールの隙間まで、ホコリや砂を細部まで吸い取ります。
+              </figcaption>
+            </figure>
+            <figure className="interior__item">
+              <div className="interior__image">
+                <img src="/assets/interior-steam.webp" width={1672} height={941} alt="水蒸気（スチーム）バキュームでシートを洗浄する様子。高温スチームで汚れとニオイを浮かせて除去します" />
+              </div>
+              <figcaption className="interior__caption">
+                <strong>水蒸気バキューム</strong>
+                高温スチームで繊維の奥の汚れ・ニオイを浮かせ、同時に吸引してすっきり洗浄します。
+              </figcaption>
+            </figure>
           </div>
         </div>
       </section>
@@ -209,7 +240,7 @@ export default function DetailingPage() {
         primaryLabel="Instagramへ"
         primaryHref={data.company.instagram}
         primaryExternal
-        bgImage="/assets/cta-detailing.png"
+        bgImage="/assets/cta-detailing.webp"
       />
       <InquirySection
         defaultSubject="detailing"

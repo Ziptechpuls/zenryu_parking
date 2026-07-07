@@ -1,0 +1,13 @@
+# Cloudflare Pages headers
+
+# Next.js のハッシュ付き静的ファイルは内容が変われば必ずファイル名も変わるため長期immutable
+/_next/static/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# 自社ホストフォント（next/font, ハッシュ付き）も長期immutable
+/_next/static/media/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# 画像はファイル名固定のため、差し替え時に古いまま残らないよう短い鮮度＋裏で再検証
+/assets/*
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800

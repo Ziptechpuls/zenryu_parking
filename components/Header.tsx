@@ -24,7 +24,11 @@ export function Header({ current }: { current?: string }) {
       <header className="nav">
         <div className="nav__inner">
           <Link className="brand" href="/">
-            <img className="brand__logo" src="/assets/zenryu-logo.png" alt="ゼンリュウ パーキング × カーディテイリング" />
+            <img className="brand__logo" src="/assets/S__45817862.jpg" width={54} height={54} alt="全琉空港パーキング" />
+            <span className="brand__wordmark">
+              <strong>全琉空港パーキング</strong>
+              <span>Zenryu Airport Parking</span>
+            </span>
           </Link>
           <nav className="nav__links">
             {link('home', '/', 'ホーム')}
