@@ -35,6 +35,7 @@ export function Header({ current }: { current?: string }) {
             {link('parking', '/parking', 'パーキング')}
             {link('pricing', '/pricing', '料金表')}
             {link('detailing', '/detailing', 'ディテイリング')}
+            {link('blog', '/blog', 'ブログ')}
             <Link href="/#access">アクセス</Link>
             <Link href="/#company">会社概要</Link>
           </nav>
@@ -59,6 +60,7 @@ export function Header({ current }: { current?: string }) {
         <Link href="/parking" onClick={close}>パーキング</Link>
         <Link href="/pricing" onClick={close}>料金表</Link>
         <Link href="/detailing" onClick={close}>ディテイリング</Link>
+        <Link href="/blog" onClick={close}>ブログ</Link>
         <Link href="/#company" onClick={close}>会社概要</Link>
         <Link href="/#access" onClick={close}>アクセス</Link>
         <div className="nav__drawer__cta">
