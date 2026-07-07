@@ -30,7 +30,7 @@ export default function BlogIndexPage() {
           <div className="page-hero__layout">
             <div>
               <div className="eyebrow">BLOG · お役立ちコラム</div>
-              <h1 className="page-hero__title">
+              <h1 className="page-hero__title page-hero__title--nowrap">
                 那覇空港パーキングと<br /><em>カーケアのコラム</em>
               </h1>
               <p className="page-hero__lede">
@@ -44,7 +44,10 @@ export default function BlogIndexPage() {
       <section className="blog-list-section">
         <div className="section">
           <div className="eyebrow">ARTICLES · 記事一覧</div>
-          <div style={{ height: 32 }}></div>
+          <h2 className="section-title">最新の<em>コラム</em></h2>
+          <p className="section-lede">
+            空港パーキングの使い方やメリット、洗車・コーティングのお役立ち情報を随時更新しています。
+          </p>
           <div className="blog-grid">
             {BLOG_POSTS.map((post) => (
               <Link key={post.slug} href={`/blog/${post.slug}`} className="blog-card">
