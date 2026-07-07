@@ -849,7 +849,7 @@ body.nav-open { overflow: hidden; }
 .triad-tile.triad-tile--parking:hover {
   background-color: #e7e0d0;
   background-image:
-    linear-gradient(rgba(236, 230, 216, 0.86), rgba(221, 212, 192, 0.9)),
+    linear-gradient(rgba(222, 213, 192, 0.9), rgba(202, 190, 164, 0.93)),
     url('/assets/parking.webp');
   background-size: cover;
   background-position: center;
@@ -859,7 +859,7 @@ body.nav-open { overflow: hidden; }
 .triad-tile.triad-tile--detailing:hover {
   background-color: #e7e0d0;
   background-image:
-    linear-gradient(rgba(236, 230, 216, 0.86), rgba(221, 212, 192, 0.9)),
+    linear-gradient(rgba(222, 213, 192, 0.9), rgba(202, 190, 164, 0.93)),
     url('/assets/detailing.webp');
   background-size: cover;
   background-position: center;
