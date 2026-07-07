@@ -3507,10 +3507,18 @@ body.nav-open { overflow: hidden; }
 }
 
 @media (max-width: 760px) {
-  .blog-card { grid-template-columns: 72px 1fr; }
-  .blog-card__mark { font-size: 30px; }
-  .blog-card__body { padding: 22px 22px; }
-  .blog-card__title { font-size: 18px; }
+  .blog-grid { gap: 20px; }
+  .blog-card { grid-template-columns: 1fr; }
+  .blog-card__mark {
+    height: 84px;
+    font-size: 40px;
+    border-right: none;
+    border-bottom: 1px solid var(--line);
+  }
+  .blog-card__body { padding: 22px 20px; }
+  .blog-card__meta { flex-wrap: wrap; gap: 6px 14px; }
+  .blog-card__title { font-size: 18px; line-height: 1.6; }
+  .blog-card__excerpt { font-size: 13.5px; }
   .blog-article-section .section { padding-top: 64px; padding-bottom: 64px; }
   .blog-article__block { margin-bottom: 36px; }
   .blog-article__p { font-size: 15px; line-height: 2; }
