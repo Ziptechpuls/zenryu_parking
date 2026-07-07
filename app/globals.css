@@ -3315,6 +3315,9 @@ body.nav-open { overflow: hidden; }
   .section { padding-top: 40px; padding-bottom: 40px; }
   .concept { padding-top: 40px; padding-bottom: 40px; }
   .cta-band { padding-top: 44px; padding-bottom: 44px; }
+  /* 見出し下のリード文の余白を詰める（後続コンテンツとの間延び解消） */
+  .section-lede { margin-bottom: 32px; }
+  .section-title { margin-bottom: 20px; }
   /* ヒーロー上部の余白とパンくず下の余白を詰める */
   .page-hero { padding-top: 30px; }
   .page-hero__breadcrumb { margin-bottom: 14px; }
