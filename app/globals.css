@@ -3332,6 +3332,14 @@ body.nav-open { overflow: hidden; }
   .section-gap { height: 16px; }
   /* 会社概要：縦積み時のモット文まわりの余白を詰める */
   .company__layout { gap: 24px; }
+  /* 選ばれる理由カード：スマホでは上下パディングと内部余白を詰める */
+  .service-tile { padding: 28px 22px; }
+  .service-tile__num { font-size: 64px; top: 18px; right: 20px; }
+  .service-tile__icon { margin-bottom: 14px; }
+  .service-tile__title { margin-bottom: 8px; }
+  .service-tile__desc { margin-bottom: 16px; }
+  .service-tile__list { margin-bottom: 0; padding-top: 14px; }
+  .service-tile__list li { padding: 5px 0; }
   /* 2つの事業タイル：スマホでは上下パディングと内部余白を詰める */
   .triad-tile { padding: 32px 24px 32px; }
   .triad-tile__num { margin-bottom: 12px; }
