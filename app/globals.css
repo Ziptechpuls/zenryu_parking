@@ -3231,7 +3231,9 @@ body.nav-open { overflow: hidden; }
   .hero__photo { position: relative; }
   .access__map { min-height: 360px; }
   .footer { padding: 60px 24px 28px; }
-  .footer__top { gap: 32px; padding-bottom: 32px; }
+  .footer__top { gap: 24px; padding-bottom: 32px; }
+  .footer__col h4 { margin-bottom: 12px; }
+  .footer__col li { padding: 4px 0; }
   .footer__bot { flex-direction: column; gap: 10px; align-items: flex-start; }
   .page-hero { padding: 60px 24px 60px; }
   .page-hero__title { font-size: clamp(32px, 6.5vw, 48px); }
