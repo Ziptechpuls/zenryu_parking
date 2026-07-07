@@ -2090,13 +2090,12 @@ body.nav-open { overflow: hidden; }
 }
 .company__layout {
   display: grid;
-  grid-template-columns: 1fr 1.2fr;
-  gap: 80px;
+  grid-template-columns: 1fr;
+  gap: 48px;
   align-items: start;
 }
 .company__visual {
-  position: sticky;
-  top: 100px;
+  position: static;
 }
 .company__seal {
   width: 220px; height: 220px;
