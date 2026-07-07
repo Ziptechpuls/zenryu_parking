@@ -2691,6 +2691,7 @@ body.nav-open { overflow: hidden; }
   display: flex;
   gap: 10px;
   align-items: center;
+  flex-wrap: nowrap;
   font-family: var(--mono);
   font-size: 11px;
   letter-spacing: 0.16em;
@@ -2699,8 +2700,16 @@ body.nav-open { overflow: hidden; }
 }
 .page-hero__breadcrumb a { color: var(--ink-mute); transition: color 0.2s; }
 .page-hero__breadcrumb a:hover { color: var(--gold); }
+.page-hero__breadcrumb a,
+.page-hero__breadcrumb span.sep { flex-shrink: 0; white-space: nowrap; }
 .page-hero__breadcrumb span.sep { color: var(--gold); }
-.page-hero__breadcrumb span.current { color: var(--gold); }
+.page-hero__breadcrumb span.current {
+  color: var(--gold);
+  min-width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 .page-hero__layout {
   display: grid;
   grid-template-columns: 1fr 0.8fr;
