@@ -114,7 +114,7 @@ export default function ParkingPage() {
             <div className="service-tile">
               <div className="service-tile__num">04</div>
               <div className="service-tile__icon">便</div>
-              <h3 className="service-tile__title">電話・Instagramですぐ連絡</h3>
+              <h3 className="service-tile__title">電話・Instagram<br />ですぐ連絡</h3>
               <p className="service-tile__desc">
                 ご予約・空き状況の確認、便変更・延長などは、お電話または公式Instagramのダイレクトメッセージですぐにご相談いただけます。
               </p>
