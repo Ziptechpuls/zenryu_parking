@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import ParkingPage from '@/components/ParkingPage';
 import { ZENRYU_DATA } from '@/lib/data';
+import { OG_IMAGE } from '@/lib/seo';
 
 export const metadata: Metadata = {
   title: '那覇空港パーキング ¥1,000/日｜送迎・カーケア付き駐車場 | ゼンリュウ',
@@ -22,6 +23,7 @@ export const metadata: Metadata = {
     description: '那覇空港すぐそば、1日¥1,000・送迎付きの空港パーキング。お預かり中にカーケア・コーティングも施工。',
     type: 'website',
     locale: 'ja_JP',
+    images: [OG_IMAGE],
   },
 };
 

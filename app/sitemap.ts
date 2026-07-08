@@ -6,19 +6,22 @@ export const dynamic = 'force-static';
 const BASE_URL = 'https://zenryu-p.jp';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const routes: { path: string; priority: number }[] = [
-    { path: '', priority: 1 },
-    { path: '/parking', priority: 0.8 },
-    { path: '/pricing', priority: 0.8 },
-    { path: '/detailing', priority: 0.8 },
-    { path: '/blog', priority: 0.7 },
-    ...BLOG_POSTS.map((p) => ({ path: `/blog/${p.slug}`, priority: 0.6 })),
+  const buildDate = new Date();
+
+  const staticRoutes: MetadataRoute.Sitemap = [
+    { url: `${BASE_URL}`, lastModified: buildDate, changeFrequency: 'monthly', priority: 1 },
+    { url: `${BASE_URL}/parking`, lastModified: buildDate, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${BASE_URL}/pricing`, lastModified: buildDate, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${BASE_URL}/detailing`, lastModified: buildDate, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${BASE_URL}/blog`, lastModified: buildDate, changeFrequency: 'weekly', priority: 0.7 },
   ];
 
-  return routes.map(({ path, priority }) => ({
-    url: `${BASE_URL}${path}`,
-    lastModified: new Date(),
+  const blogRoutes: MetadataRoute.Sitemap = BLOG_POSTS.map((p) => ({
+    url: `${BASE_URL}/blog/${p.slug}`,
+    lastModified: new Date(p.updated ?? p.date),
     changeFrequency: 'monthly',
-    priority,
+    priority: 0.6,
   }));
+
+  return [...staticRoutes, ...blogRoutes];
 }

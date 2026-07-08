@@ -10,7 +10,7 @@ export function Footer() {
           <div className="footer__brand">
             <div className="brand">
               <div className="brand__mark brand__mark--img">
-                <img src="/assets/S__45817862.jpg" alt="全琉空港パーキング" />
+                <img src="/assets/S__45817862.jpg" width={44} height={44} loading="lazy" decoding="async" alt="全琉空港パーキング" />
               </div>
               <div>
                 <div className="brand__name">ゼンリュウレンタカー</div>

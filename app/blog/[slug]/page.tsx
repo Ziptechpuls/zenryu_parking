@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import BlogArticlePage from '@/components/BlogArticlePage';
 import { BLOG_POSTS, getPostBySlug } from '@/lib/blog';
+import { OG_IMAGE } from '@/lib/seo';
 
 export const dynamicParams = false;
 
@@ -30,6 +31,7 @@ export async function generateMetadata({
       locale: 'ja_JP',
       publishedTime: post.date,
       modifiedTime: post.updated ?? post.date,
+      images: [OG_IMAGE],
     },
   };
 }

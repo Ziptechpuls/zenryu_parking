@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import DetailingPage from '@/components/DetailingPage';
 import { DETAILING_FAQS } from '@/lib/data';
+import { OG_IMAGE } from '@/lib/seo';
 
 export const metadata: Metadata = {
   title: '豊見城市 カーディテイリング｜車磨き・車内清掃・コーティング | ゼンリュウ',
@@ -22,6 +23,7 @@ export const metadata: Metadata = {
     description: '豊見城市のカーディテイリング。手洗い洗車・車磨き・ガラスコーティング・車内清掃まで自社施工。',
     type: 'website',
     locale: 'ja_JP',
+    images: [OG_IMAGE],
   },
 };
 

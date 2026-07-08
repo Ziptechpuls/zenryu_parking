@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import PricingPage from '@/components/PricingPage';
+import { OG_IMAGE } from '@/lib/seo';
 
 export const metadata: Metadata = {
   title: '那覇空港パーキング 料金表｜1日¥1,000〜・月額¥20,000 | ゼンリュウ',
@@ -18,6 +19,7 @@ export const metadata: Metadata = {
     description: '日数別のわかりやすい空港パーキング料金。21日以上は月額¥20,000、リピーター特典あり。',
     type: 'website',
     locale: 'ja_JP',
+    images: [OG_IMAGE],
   },
 };
 

@@ -58,7 +58,7 @@ export default function ParkingPage() {
             駐車している時間を、<br/><em>車の価値が上がる時間へ</em>
           </h2>
           <div className="concept__image">
-            <img src="/assets/concept.webp" width={1674} height={940} alt="出（ご旅行・ご出張へ）→ 磨（駐車中に洗車・磨き・コーティングを施工）→ 帰（整えられたお車でお出迎え）" />
+            <img src="/assets/concept.webp" width={1674} height={940} loading="lazy" decoding="async" alt="出（ご旅行・ご出張へ）→ 磨（駐車中に洗車・磨き・コーティングを施工）→ 帰（整えられたお車でお出迎え）" />
           </div>
         </div>
       </section>

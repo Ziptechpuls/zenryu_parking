@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import BlogIndexPage from '@/components/BlogIndexPage';
 import { BLOG_POSTS } from '@/lib/blog';
+import { OG_IMAGE } from '@/lib/seo';
 
 export const metadata: Metadata = {
   title: 'ブログ｜那覇空港パーキング・カーケアのお役立ちコラム | ゼンリュウ',
@@ -19,6 +20,7 @@ export const metadata: Metadata = {
     description: '那覇空港パーキングの使い方やメリット、洗車・コーティングのお役立ち情報を発信しています。',
     type: 'website',
     locale: 'ja_JP',
+    images: [OG_IMAGE],
   },
 };
 

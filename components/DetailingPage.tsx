@@ -136,7 +136,7 @@ export default function DetailingPage() {
             施工後の艶・透明感をご覧ください。手洗い洗車・磨き・コーティングによるビフォーアフターの一部をご紹介します。
           </p>
           <div className="beforeafter__image">
-            <img src="/assets/works.webp" width={1668} height={943} alt="カーディテイリング施工事例 ビフォーアフター：スズキ ソリオ、ホンダ N-BOX、BMW 7シリーズ、ホンダ シビックの磨き・コーティング前後比較" />
+            <img src="/assets/works.webp" width={1668} height={943} loading="lazy" decoding="async" alt="カーディテイリング施工事例 ビフォーアフター：スズキ ソリオ、ホンダ N-BOX、BMW 7シリーズ、ホンダ シビックの磨き・コーティング前後比較" />
           </div>
         </div>
       </section>
@@ -152,7 +152,7 @@ export default function DetailingPage() {
           <div className="interior__grid">
             <figure className="interior__item">
               <div className="interior__image">
-                <img src="/assets/interior-vacuum.webp" width={1536} height={1024} alt="車内を掃除機で吸い上げる様子。シートやコンソール周りのホコリ・砂を丁寧に除去します" />
+                <img src="/assets/interior-vacuum.webp" width={1536} height={1024} loading="lazy" decoding="async" alt="車内を掃除機で吸い上げる様子。シートやコンソール周りのホコリ・砂を丁寧に除去します" />
               </div>
               <figcaption className="interior__caption">
                 <strong>掃除機で吸い上げ</strong>
@@ -161,7 +161,7 @@ export default function DetailingPage() {
             </figure>
             <figure className="interior__item">
               <div className="interior__image">
-                <img src="/assets/interior-steam.webp" width={1672} height={941} alt="水蒸気（スチーム）バキュームでシートを洗浄する様子。高温スチームで汚れとニオイを浮かせて除去します" />
+                <img src="/assets/interior-steam.webp" width={1672} height={941} loading="lazy" decoding="async" alt="水蒸気（スチーム）バキュームでシートを洗浄する様子。高温スチームで汚れとニオイを浮かせて除去します" />
               </div>
               <figcaption className="interior__caption">
                 <strong>水蒸気バキューム</strong>
