@@ -3349,11 +3349,17 @@ body.nav-open { overflow: hidden; }
   .service-tile__desc { margin-bottom: 16px; }
   .service-tile__list { margin-bottom: 0; padding-top: 14px; }
   .service-tile__list li { padding: 5px 0; }
-  /* ご利用の流れ：STEP間・内部の余白を詰める */
+  /* ご利用の流れ：STEP間・内部の余白を詰める＋アイコンとタイトルを横並びに */
   .how__step { padding: 20px 24px; }
   .how__step__num { margin-bottom: 14px; }
-  .how__step__icon { margin-bottom: 14px; }
-  .how__step__title { margin-bottom: 8px; }
+  .how__step__head {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 10px;
+  }
+  .how__step__icon { margin-bottom: 0; flex-shrink: 0; width: 48px; height: 48px; font-size: 20px; }
+  .how__step__title { margin-bottom: 0; }
   /* 2つの事業タイル：スマホでは上下パディングと内部余白を詰める */
   .triad-tile { padding: 32px 24px 32px; }
   .triad-tile__num { margin-bottom: 12px; }

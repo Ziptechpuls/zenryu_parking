@@ -142,8 +142,10 @@ export default function ParkingPage() {
             {data.steps.map((s) => (
               <div className="how__step" key={s.num}>
                 <div className="how__step__num">STEP · {s.num}</div>
-                <div className="how__step__icon">{s.glyph}</div>
-                <h3 className="how__step__title">{s.title}</h3>
+                <div className="how__step__head">
+                  <div className="how__step__icon">{s.glyph}</div>
+                  <h3 className="how__step__title">{s.title}</h3>
+                </div>
                 <p className="how__step__desc">{s.desc}</p>
               </div>
             ))}
