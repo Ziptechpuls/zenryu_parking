@@ -220,29 +220,29 @@ img { display: block; max-width: 100%; }
 /* ---------- Mobile menu ---------- */
 .nav__menu-btn {
   display: none;
-  width: 42px;
-  height: 42px;
+  width: 32px;
+  height: 32px;
   border: 1px solid var(--line);
   background: transparent;
   color: var(--ink);
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 5px;
+  gap: 4px;
   cursor: pointer;
   transition: border-color 0.25s;
 }
 .nav__menu-btn:hover { border-color: var(--gold); }
 .nav__menu-btn__line {
   display: block;
-  width: 18px;
+  width: 15px;
   height: 1px;
   background: var(--ink);
   transition: transform 0.3s, opacity 0.3s;
 }
-.nav__menu-btn.is-open .nav__menu-btn__line:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+.nav__menu-btn.is-open .nav__menu-btn__line:nth-child(1) { transform: translateY(5px) rotate(45deg); }
 .nav__menu-btn.is-open .nav__menu-btn__line:nth-child(2) { opacity: 0; }
-.nav__menu-btn.is-open .nav__menu-btn__line:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+.nav__menu-btn.is-open .nav__menu-btn__line:nth-child(3) { transform: translateY(-5px) rotate(-45deg); }
 
 .nav__drawer {
   display: none;
@@ -281,10 +281,10 @@ img { display: block; max-width: 100%; }
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 0;
+  padding: 13px 0;
   border-bottom: 1px solid var(--line);
   font-family: var(--serif);
-  font-size: 17px;
+  font-size: 15px;
   letter-spacing: 0.08em;
   color: var(--ink);
   transition: color 0.2s;
@@ -294,19 +294,19 @@ img { display: block; max-width: 100%; }
   content: "→";
   font-family: var(--sans);
   color: var(--gold);
-  font-size: 14px;
+  font-size: 13px;
 }
 .nav__drawer__cta {
-  margin-top: 28px;
+  margin-top: 22px;
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 .nav__drawer__contact {
   font-family: var(--serif);
-  font-size: 22px;
+  font-size: 18px;
   color: var(--gold);
-  margin-top: 24px;
+  margin-top: 20px;
   letter-spacing: 0.04em;
 }
 .nav__drawer__contact small {
@@ -319,6 +319,13 @@ img { display: block; max-width: 100%; }
   margin-bottom: 6px;
 }
 body.nav-open { overflow: hidden; }
+/* メニュー展開中はヘッダーを画面最上部へ固定し、util-bar分の隙間をなくす */
+body.nav-open .nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
 
 /* ---------- Buttons ---------- */
 .btn {
