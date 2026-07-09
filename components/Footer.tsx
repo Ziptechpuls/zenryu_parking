@@ -25,7 +25,7 @@ export function Footer() {
           <div className="footer__col">
             <h4>Service</h4>
             <ul>
-              <li><Link href="/parking">空港パーキング</Link></li>
+              <li><Link href="/parking">全琉空港パーキング</Link></li>
               <li><Link href="/detailing">カーディテイリング</Link></li>
             </ul>
           </div>

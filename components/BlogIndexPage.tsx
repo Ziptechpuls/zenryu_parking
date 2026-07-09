@@ -34,7 +34,7 @@ export default function BlogIndexPage() {
                 全琉空港パーキングと<br /><em>カーケアのコラム</em>
               </h1>
               <p className="page-hero__lede">
-                空港パーキングの使い方やメリット、洗車・コーティングのお役立ち情報を発信しています。ご旅行・ご出張の前に、ぜひご覧ください。
+                全琉空港パーキングの使い方やメリット、洗車・コーティングのお役立ち情報を発信しています。ご旅行・ご出張の前に、ぜひご覧ください。
               </p>
             </div>
           </div>
@@ -46,7 +46,7 @@ export default function BlogIndexPage() {
           <div className="eyebrow">ARTICLES · 記事一覧</div>
           <h2 className="section-title">最新の<em>コラム</em></h2>
           <p className="section-lede">
-            空港パーキングの使い方やメリット、洗車・コーティングのお役立ち情報を随時更新しています。
+            全琉空港パーキングの使い方やメリット、洗車・コーティングのお役立ち情報を随時更新しています。
           </p>
           <div className="blog-grid">
             {BLOG_POSTS.map((post) => (

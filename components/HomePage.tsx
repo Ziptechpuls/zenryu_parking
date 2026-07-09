@@ -98,20 +98,20 @@ export default function HomePage() {
           <div className="eyebrow">SERVICES · 2つの事業</div>
           <h2 className="section-title heading-1line-sp">ゼンリュウの2つの柱</h2>
           <p className="section-lede">
-            「空港パーキング」と「カーディテイリング」。お預かりした駐車時間がそのまま施工時間になる——2つの事業が組み合わさることで、停めるだけで愛車が磨き上がります。
+            「全琉空港パーキング」と「カーディテイリング」。お預かりした駐車時間がそのまま施工時間になる——2つの事業が組み合わさることで、停めるだけで愛車が磨き上がります。
           </p>
         </div>
         <div className="triad__grid triad__grid--two">
           <Link className="triad-tile triad-tile--parking" href="/parking">
             <div className="triad-tile__char">駐</div>
             <div className="triad-tile__num">SERVICE · 01</div>
-            <h3 className="triad-tile__name">空港パーキング</h3>
+            <h3 className="triad-tile__name">全琉空港パーキング</h3>
             <div className="triad-tile__en">AIRPORT PARKING</div>
             <p className="triad-tile__desc">
               那覇空港のすぐそばで愛車をお預かり。ご旅行・ご出張のあいだ、1日¥1,000で安心してお停めいただけます。空港まで送迎付き。
             </p>
             <div className="triad-tile__price">¥1,000<small>/ 1日</small></div>
-            <span className="triad-tile__cta">空港パーキングを見る <span className="triad-tile__arrow">→</span></span>
+            <span className="triad-tile__cta">全琉空港パーキングを見る <span className="triad-tile__arrow">→</span></span>
           </Link>
           <Link className="triad-tile triad-tile--detailing" href="/detailing">
             <div className="triad-tile__char">磨</div>
@@ -214,7 +214,7 @@ export default function HomePage() {
                   <tr><th>所在地</th><td>{c.address}</td></tr>
                   <tr><th>電話</th><td>{c.phone}</td></tr>
                   <tr><th>営業時間</th><td>{c.hours}</td></tr>
-                  <tr><th>事業内容</th><td>① 空港パーキング事業<br/>② カーディテイリング事業</td></tr>
+                  <tr><th>事業内容</th><td>① 全琉空港パーキング事業<br/>② カーディテイリング事業</td></tr>
                   <tr><th>Instagram</th><td><a href={c.instagram} target="_blank" rel="noopener" style={{ color: 'var(--gold)' }}>@zenryu_p</a></td></tr>
                 </tbody>
               </table>
