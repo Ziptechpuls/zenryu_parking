@@ -4,11 +4,11 @@ import { BLOG_POSTS } from '@/lib/blog';
 import { OG_IMAGE } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'ブログ｜那覇空港パーキング・カーケアのお役立ちコラム | ゼンリュウ',
+  title: 'ブログ｜全琉空港パーキング・カーケアのお役立ちコラム | ゼンリュウ',
   description:
-    '那覇空港パーキングの使い方やメリット、洗車・コーティングのお役立ち情報を発信するゼンリュウのブログ。ご旅行・ご出張で車を預けたい方、愛車をきれいにしたい方へ。',
+    '全琉空港パーキングの使い方やメリット、洗車・コーティングのお役立ち情報を発信するゼンリュウのブログ。ご旅行・ご出張で車を預けたい方、愛車をきれいにしたい方へ。',
   keywords: [
-    '那覇空港パーキング ブログ',
+    '全琉空港パーキング ブログ',
     '空港パーキング メリット',
     '那覇空港 駐車場',
     'カーケア コラム',
@@ -16,8 +16,8 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: '/blog' },
   openGraph: {
-    title: 'ブログ｜那覇空港パーキング・カーケアのお役立ちコラム | ゼンリュウ',
-    description: '那覇空港パーキングの使い方やメリット、洗車・コーティングのお役立ち情報を発信しています。',
+    title: 'ブログ｜全琉空港パーキング・カーケアのお役立ちコラム | ゼンリュウ',
+    description: '全琉空港パーキングの使い方やメリット、洗車・コーティングのお役立ち情報を発信しています。',
     type: 'website',
     locale: 'ja_JP',
     images: [OG_IMAGE],
@@ -29,7 +29,7 @@ const jsonLd = {
   '@type': 'Blog',
   name: 'ゼンリュウ ブログ',
   description:
-    '那覇空港パーキングの使い方やメリット、洗車・コーティングのお役立ち情報',
+    '全琉空港パーキングの使い方やメリット、洗車・コーティングのお役立ち情報',
   url: 'https://zenryu-p.jp/blog',
   blogPost: BLOG_POSTS.map((p) => ({
     '@type': 'BlogPosting',

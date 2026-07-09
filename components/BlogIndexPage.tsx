@@ -31,7 +31,7 @@ export default function BlogIndexPage() {
             <div>
               <div className="eyebrow">BLOG · お役立ちコラム</div>
               <h1 className="page-hero__title page-hero__title--nowrap">
-                那覇空港パーキングと<br /><em>カーケアのコラム</em>
+                全琉空港パーキングと<br /><em>カーケアのコラム</em>
               </h1>
               <p className="page-hero__lede">
                 空港パーキングの使い方やメリット、洗車・コーティングのお役立ち情報を発信しています。ご旅行・ご出張の前に、ぜひご覧ください。

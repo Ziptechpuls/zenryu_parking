@@ -31,16 +31,16 @@ export default function PricingPage() {
             <span className="current">料金表</span>
           </div>
           <div className="eyebrow">PRICING · 料金表</div>
-          <h1 className="page-hero__title heading-1line-sp">空港パーキング<em>料金表</em></h1>
+          <h1 className="page-hero__title heading-1line-sp">全琉空港パーキング<em>料金表</em></h1>
           <p className="page-hero__lede">
-            安心・安全の那覇空港パーキング。ご利用日数に応じたわかりやすい料金です。21日以上は月額20,000円で、長期のお預かりもお得にご利用いただけます。
+            安心・安全の全琉空港パーキング。ご利用日数に応じたわかりやすい料金です。21日以上は月額20,000円で、長期のお預かりもお得にご利用いただけます。
           </p>
         </div>
       </section>
 
       <section className="section section--narrow">
-        <div className="eyebrow">AIRPORT PARKING · 空港パーキング料金</div>
-        <h2 className="section-title heading-1line-sp">空港パーキング料金表</h2>
+        <div className="eyebrow">AIRPORT PARKING · 全琉空港パーキング料金</div>
+        <h2 className="section-title heading-1line-sp">全琉空港パーキング料金表</h2>
         <div style={{ height: 28 }}></div>
         <div className="price-table-hint" aria-hidden="true">← 横にスクロールできます →</div>
         <div className="price-table-wrap">

@@ -95,9 +95,9 @@ export default function BlogArticlePage({ post }: { post: BlogPost }) {
               <div className="crosslink__card">
                 <div className="crosslink__char">停</div>
                 <div>
-                  <h3 className="crosslink__title">那覇空港パーキングの詳細はこちら</h3>
+                  <h3 className="crosslink__title">全琉空港パーキングの詳細はこちら</h3>
                   <p className="crosslink__desc">
-                    1日¥1,000・空港まで送迎付き。お預かり中に手洗い洗車・コーティングまで施工できる、ゼンリュウの那覇空港パーキングの詳細をご案内しています。
+                    1日¥1,000・空港まで送迎付き。お預かり中に手洗い洗車・コーティングまで施工できる、ゼンリュウの全琉空港パーキングの詳細をご案内しています。
                   </p>
                 </div>
                 <span className="btn btn--gold btn--sm">パーキングを見る <span className="btn__arrow">→</span></span>

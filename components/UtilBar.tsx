@@ -6,7 +6,7 @@ export function UtilBar() {
     <div className="util-bar">
       <div className="util-bar__inner">
         <div className="util-bar__left">
-          <span><span className="util-bar__dot"></span>那覇空港 パーキング × カーディテイリング</span>
+          <span><span className="util-bar__dot"></span>全琉空港パーキング × カーディテイリング</span>
           <span>営業 {c.hours}</span>
         </div>
         <div className="util-bar__right">

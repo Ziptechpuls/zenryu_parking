@@ -27,12 +27,12 @@ const jetBrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL('https://zenryu-p.jp'),
   title: {
-    default: 'ゼンリュウ | 那覇空港 パーキング × カーディテイリング',
+    default: 'ゼンリュウ | 全琉空港パーキング × カーディテイリング',
     template: '%s',
   },
   description:
     'ゼンリュウは那覇空港の空港パーキングとカーディテイリングの専門店。ご旅行・ご出張で車を預けているあいだに、職人が洗車・磨き・コーティングを施工します。',
-  applicationName: 'ゼンリュウ 那覇空港パーキング',
+  applicationName: 'ゼンリュウ 全琉空港パーキング',
   formatDetection: { telephone: true },
   robots: {
     index: true,
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'ゼンリュウ | 那覇空港 パーキング × カーディテイリング',
+    title: 'ゼンリュウ | 全琉空港パーキング × カーディテイリング',
     description: '預けているあいだに、磨かれる。那覇空港の空港パーキングとカーディテイリング。',
     images: [OG_IMAGE.url],
   },

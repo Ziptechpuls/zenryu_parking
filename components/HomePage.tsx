@@ -45,7 +45,7 @@ export default function HomePage() {
           <div className="hero__copy">
             <div className="hero__kicker">
               <span className="hero__kicker__dot"></span>
-              那覇空港 パーキング × カーディテイリング
+              全琉空港パーキング × カーディテイリング
             </div>
             <h1 className="hero__title">
               預ける間に、<br/><em>磨かれる</em>
@@ -56,7 +56,7 @@ export default function HomePage() {
               那覇空港近辺で駐車場をお探しの方は、ぜひゼンリュウまでご連絡ください。
             </p>
             <div className="hero__actions">
-              <Link className="btn btn--gold btn--lg" href="/parking">那覇空港パーキングを見る</Link>
+              <Link className="btn btn--gold btn--lg" href="/parking">全琉空港パーキングを見る</Link>
               <Link className="btn btn--gold btn--lg" href="/detailing">カーディテイリングを見る</Link>
             </div>
             <div className="hero__stats">

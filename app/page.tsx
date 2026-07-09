@@ -3,13 +3,13 @@ import HomePage from '@/components/HomePage';
 import { OG_IMAGE } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'ゼンリュウ | 那覇空港 パーキング × カーディテイリング',
+  title: 'ゼンリュウ | 全琉空港パーキング × カーディテイリング',
   description:
     'ゼンリュウは那覇空港の空港パーキングとカーディテイリングの専門店。ご旅行・ご出張で車を預けているあいだに、職人が洗車・磨き・コーティングを施工します。',
-  keywords: ['ゼンリュウ', '那覇空港 パーキング', '沖縄 ディテイリング', '那覇空港 洗車', '沖縄 コーティング'],
+  keywords: ['ゼンリュウ', '全琉空港パーキング', '沖縄 ディテイリング', '那覇空港 洗車', '沖縄 コーティング'],
   alternates: { canonical: '/' },
   openGraph: {
-    title: 'ゼンリュウ | 那覇空港 パーキング × カーディテイリング',
+    title: 'ゼンリュウ | 全琉空港パーキング × カーディテイリング',
     description: '預けているあいだに、磨かれる。那覇空港の空港パーキングとカーディテイリング。',
     type: 'website',
     locale: 'ja_JP',
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'LocalBusiness',
-  name: 'ゼンリュウ 那覇空港パーキング × カーディテイリング',
+  name: 'ゼンリュウ 全琉空港パーキング × カーディテイリング',
   '@id': 'https://zenryu-p.jp/#business',
   url: 'https://zenryu-p.jp/',
   image: 'https://zenryu-p.jp/assets/hero-bg.webp',

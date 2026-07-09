@@ -31,10 +31,10 @@ export default function ParkingPage() {
             <div>
               <div className="eyebrow">CAR CARE &amp; PARKING</div>
               <h1 className="page-hero__title page-hero__title--nowrap">
-                那覇空港<em>パーキング</em><br/>預ける間に磨かれる
+                全琉空港<em>パーキング</em><br/>預ける間に磨かれる
               </h1>
               <p className="page-hero__lede">
-                那覇空港パーキングをお探しの方へ。ご旅行・ご出張のあいだ、那覇空港のすぐそばで愛車をお預かりします。駐車料金は1日¥1,000、空港まで送迎付き。お預かり中に手洗い洗車・コーティングまで施工するカーケアコース (松竹梅) もご利用いただけます。
+                全琉空港パーキングをお探しの方へ。ご旅行・ご出張のあいだ、那覇空港のすぐそばで愛車をお預かりします。駐車料金は1日¥1,000、空港まで送迎付き。お預かり中に手洗い洗車・コーティングまで施工するカーケアコース (松竹梅) もご利用いただけます。
               </p>
             </div>
             <dl className="page-hero__meta">
@@ -67,9 +67,9 @@ export default function ParkingPage() {
       <section className="services">
         <div className="section">
           <div className="eyebrow">WHY · 選ばれる理由</div>
-          <h2 className="section-title heading-1line-sp">那覇空港パーキングで<br className="br-sp" /><em>選ばれる4つの理由</em></h2>
+          <h2 className="section-title heading-1line-sp">全琉空港パーキングで<br className="br-sp" /><em>選ばれる4つの理由</em></h2>
           <p className="section-lede">
-            ご旅行中・ご出張中の不安をすべて取り除く、ゼンリュウの那覇空港パーキング。駐車場の予約から空港送迎、お預かり中のカーケアまで一貫して承ります。
+            ご旅行中・ご出張中の不安をすべて取り除く、ゼンリュウの全琉空港パーキング。駐車場の予約から空港送迎、お預かり中のカーケアまで一貫して承ります。
           </p>
           <div className="services__grid">
             <div className="service-tile">
